@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Diary from '../components/Diary.jsx';
 import { getAllDiary, postDiary } from '../services/diaryService.js';
 import styles from './css/DiaryList.module.scss';
+import CreateDiaryButton from '../components/CreateDiaryButton.jsx';
 
 export default function DiaryList() {
   const [diaryList, setDiaryList] = useState([]);
@@ -36,12 +37,12 @@ export default function DiaryList() {
           ? diaryList.map((diary) => <Diary key={diary.id} diary={diary} />)
           : null}
       </ul>
-
+      <CreateDiaryButton />
       {/* modal form */}
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} value={text} />
         <button onClick={handleSubmit}>일기 생성</button>
-      </form>
+      </form> */}
     </main>
   );
 }
