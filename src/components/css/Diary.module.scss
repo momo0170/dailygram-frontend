@@ -1,0 +1,54 @@
+$fontSize: 12px;
+$fontColor: #515151;
+
+%card-hover {
+  transition: transform 200ms ease-in-out;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 1px 1px 5px gray;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-5px);
+    @extend %card-hover;
+  }
+  &:not(:hover) {
+    @extend %card-hover;
+  }
+  .cardImg {
+    flex-grow: 3;
+    overflow: hidden;
+  }
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      img {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+      }
+      .nickname {
+        font-size: $fontSize;
+      }
+    }
+    .createdAt {
+      font-size: $fontSize;
+      color: $fontColor;
+    }
+  }
+}

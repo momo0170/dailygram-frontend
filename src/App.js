@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import DiaryList from './routes/DiaryList';
 
 function App() {

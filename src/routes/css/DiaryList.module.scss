@@ -1,0 +1,17 @@
+.main {
+  width: 75%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  ul {
+    padding-left: 0;
+    padding: 20px;
+    margin: 0;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(3, 200px);
+    gap: 30px;
+    background-color: white;
+  }
+}

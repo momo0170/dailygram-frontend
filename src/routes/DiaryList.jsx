@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Diary from '../components/Diary.jsx';
 import { getAllDiary, postDiary } from '../services/diaryService.js';
+import styles from './css/DiaryList.module.scss';
 
 export default function DiaryList() {
   const [diaryList, setDiaryList] = useState([]);
@@ -29,10 +30,12 @@ export default function DiaryList() {
   console.log(diaryList);
 
   return (
-    <main>
-      {diaryList.length > 0
-        ? diaryList.map((diary) => <Diary key={diary.id} diary={diary} />)
-        : null}
+    <main className={styles.main}>
+      <ul>
+        {diaryList.length > 0
+          ? diaryList.map((diary) => <Diary key={diary.id} diary={diary} />)
+          : null}
+      </ul>
 
       {/* modal form */}
       <form onSubmit={handleSubmit}>
