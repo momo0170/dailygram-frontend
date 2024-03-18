@@ -2,11 +2,7 @@ import './App.css';
 import DiaryList from './routes/DiaryList';
 
 function App() {
-  return (
-    <div className="App">
-      <DiaryList />
-    </div>
-  );
+  return <DiaryList />;
 }
 
 export default App;

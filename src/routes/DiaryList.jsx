@@ -34,6 +34,7 @@ export default function DiaryList() {
         ? diaryList.map((diary) => <Diary key={diary.id} diary={diary} />)
         : null}
 
+      {/* modal form */}
       <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} value={text} />
         <button onClick={handleSubmit}>일기 생성</button>

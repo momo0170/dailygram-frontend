@@ -1,22 +1,18 @@
 import React from 'react';
 
 export default function Diary({ diary }) {
-  const { nickname, createdAt, text } = diary;
+  const { nickname, createdAt, text, url } = diary;
   return (
-    <>
+    <li>
+      {/* text는 추후에 카드 이미지로 변경 예정 */}
+      <div>{text}</div>
       <div>
-        <div></div>
         <div>
-          <div>
-            <div>{nickname}</div>
-            <div>{text}</div>
-          </div>
-          <div>{createdAt.slice(0, 15)}</div>
+          <img src={url} alt="profile-img" />
+          <span>{nickname}</span>
         </div>
+        <div>{createdAt.slice(0, 15)}</div>
       </div>
-      <button>수정</button>
-      <button>삭제</button>
-      <div>=========</div>
-    </>
+    </li>
   );
 }
