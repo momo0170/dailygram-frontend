@@ -4,10 +4,12 @@ import { getAllDiary } from '../services/diaryService.js';
 import styles from './css/DiaryList.module.scss';
 import CreateDiaryButton from '../components/CreateDiaryButton.jsx';
 import InputModal from '../components/InputModal.jsx';
+import EditInputModal from '../components/EditInputModal.jsx';
 
 export default function DiaryList() {
   const [diaryList, setDiaryList] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [isCardOpen, setIsCardOpen] = useState(false);
 
   useEffect(() => {
     getAllDiary().then((diaries) => setDiaryList(diaries));
@@ -17,14 +19,27 @@ export default function DiaryList() {
     <main className={styles.main}>
       <ul>
         {diaryList.length > 0
-          ? diaryList.map((diary) => <Diary key={diary.id} diary={diary} />)
+          ? diaryList.map((diary) => (
+              <Diary
+                key={diary.id}
+                diary={diary}
+                isCardOpen={isCardOpen}
+                setIsCardOpen={setIsCardOpen}
+              />
+            ))
           : null}
       </ul>
-      <InputModal
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        setDiaryList={setDiaryList}
-      />
+      {isCardOpen ? (
+        <EditInputModal isCardOpen={isCardOpen} setIsCardOpen={setIsCardOpen} />
+      ) : null}
+      {isOpen ? (
+        <InputModal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          setDiaryList={setDiaryList}
+        />
+      ) : null}
+
       <CreateDiaryButton setIsOpen={setIsOpen} />
     </main>
   );
