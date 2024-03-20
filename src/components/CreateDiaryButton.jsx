@@ -5,7 +5,7 @@ export default function CreateDiaryButton({ setIsOpen }) {
   const handleClick = () => setIsOpen(true);
   return (
     <button className={styles.btn} onClick={handleClick}>
-      새로운 일기 생성하기
+      생성하기
     </button>
   );
 }
