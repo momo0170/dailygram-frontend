@@ -23,24 +23,20 @@ export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
     setText(e.target.value);
   };
 
-  const handleClick = () => {
+  const handleClose = () => {
     setIsOpen(!isOpen);
+    setText('');
   };
 
   return (
     <div
-      onClick={handleClick}
+      onClick={handleClose}
       className={`${styles.background} ${isOpen ? styles.openBackground : ''}`}
     >
       <div
         onClick={(e) => e.stopPropagation()}
         className={`${styles.main} ${isOpen ? styles.openMain : ''}`}
       >
-        <header className={styles.header}>
-          <button onClick={handleClick} className={styles.closeBtn}>
-            <IoIosClose size="40" />
-          </button>
-        </header>
         <section className={styles.section}>
           <textarea
             onChange={handleChange}
@@ -49,6 +45,9 @@ export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
           ></textarea>
         </section>
         <footer className={styles.footer}>
+          <button onClick={handleClose} className={styles.closeBtn}>
+            취소
+          </button>
           <button onClick={handleCreate} className={styles.createBtn}>
             생성
           </button>
