@@ -1,10 +1,18 @@
 import React from 'react';
 import styles from './css/Diary.module.scss';
+import { useNavigate } from 'react-router-dom';
 
-export default function Diary({ diary }) {
-  const { nickname, createdAt, text, url } = diary;
+export default function Diary({ diary, isCardOpen, setIsCardOpen }) {
+  const { nickname, createdAt, text, url, id } = diary;
+
+  const navigate = useNavigate();
+  const lookDiary = () => {
+    setIsCardOpen(!isCardOpen);
+    navigate(`/diary/${id}`, { state: { text } });
+  };
   return (
-    <li>
+    // 클릭 시 /diary/:id 로 이동
+    <li onClick={lookDiary}>
       {/* text는 추후에 카드 이미지로 변경 예정 */}
       <div className={styles.cardImg}>{text}</div>
       <div className={styles.info}>

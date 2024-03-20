@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './css/InputModal.module.scss';
-import { IoIosClose } from 'react-icons/io';
+
 import { postDiary } from '../services/diaryService';
 
 export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
