@@ -40,7 +40,7 @@ export default function EditInputModal({ isCardOpen, setIsCardOpen }) {
         <section className={styles.section}>
           <textarea
             className={styles.content}
-            value={text}
+            defaultValue={text}
             onChange={handleChange}
           ></textarea>
         </section>
