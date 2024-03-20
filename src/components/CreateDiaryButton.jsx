@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './css/CreateDiaryButton.module.scss';
 
-export default function CreateDiaryButton({ isOpen, setIsOpen }) {
+export default function CreateDiaryButton({ setIsOpen }) {
   const handleClick = () => setIsOpen(true);
   return (
     <button className={styles.btn} onClick={handleClick}>

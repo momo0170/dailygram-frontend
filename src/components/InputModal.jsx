@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './css/InputModal.module.scss';
 import { IoIosClose } from 'react-icons/io';
+import { postDiary } from '../services/diaryService';
 
-export default function InputModal({ isOpen, setIsOpen }) {
+export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
+  const [text, setText] = useState('');
+  const onCreate = (newDiary) => {
+    setDiaryList((diaries) => [newDiary, ...diaries]);
+  };
+  const handleCreate = () => {
+    postDiary(text) //
+      .then((newDiary) => {
+        onCreate(newDiary);
+        setText('');
+      })
+      .then(() => {
+        alert('생성 완료');
+        setIsOpen(!isOpen);
+      });
+  };
+  const handleChange = (e) => {
+    setText(e.target.value);
+  };
+
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <div
       onClick={handleClick}
@@ -21,10 +42,16 @@ export default function InputModal({ isOpen, setIsOpen }) {
           </button>
         </header>
         <section className={styles.section}>
-          <textarea className={styles.content}></textarea>
+          <textarea
+            onChange={handleChange}
+            className={styles.content}
+            value={text}
+          ></textarea>
         </section>
         <footer className={styles.footer}>
-          <button className={styles.createBtn}>생성</button>
+          <button onClick={handleCreate} className={styles.createBtn}>
+            생성
+          </button>
         </footer>
       </div>
     </div>
