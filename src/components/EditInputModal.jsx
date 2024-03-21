@@ -1,17 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { IoIosClose } from 'react-icons/io';
 import styles from './css/EditInputModal.module.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { updateDiary } from '../services/diaryService';
 
-export default function EditInputModal({ isCardOpen, setIsCardOpen }) {
-  // const location = useLocation();
+export default function EditInputModal({
+  isCardOpen,
+  setIsCardOpen,
+  setDiaryList,
+}) {
+  const [updatedText, setUpdatedText] = useState('');
   const {
-    state: { text },
+    state: { text, id },
   } = useLocation();
   const navigate = useNavigate();
-  // console.log(location);
+  const onUpdate = (updatedText) => {
+    setDiaryList((diaryList) => {
+      return diaryList.map((diary) =>
+        diary.id === updatedText.id ? updatedText : diary
+      );
+    });
+  };
   const handleUpdate = () => {
-    console.log('update!');
+    updateDiary(updatedText, id) //
+      .then((updatedText) => onUpdate(updatedText)) //
+      .then(() => setIsCardOpen(!isCardOpen));
   };
 
   const handleClose = () => {
@@ -19,8 +32,9 @@ export default function EditInputModal({ isCardOpen, setIsCardOpen }) {
     setIsCardOpen(!isCardOpen);
   };
   const handleChange = (e) => {
-    console.log(e.target.value);
+    setUpdatedText(e.target.value);
   };
+  console.log(id);
   return (
     <div
       onClick={handleClose}

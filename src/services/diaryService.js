@@ -21,3 +21,14 @@ export async function postDiary(text) {
   });
   return response.data;
 }
+
+export async function updateDiary(text, id) {
+  const response = await axios({
+    method: 'PUT',
+    url: `${process.env.REACT_APP_BASE_URL}/diary/${id}`,
+    data: {
+      text: text,
+    },
+  });
+  return response.data;
+}

@@ -15,22 +15,25 @@ export default function DiaryList() {
     getAllDiary().then((diaries) => setDiaryList(diaries));
   }, []);
 
+  console.log(diaryList);
   return (
     <main className={styles.main}>
       <ul>
-        {diaryList.length > 0
-          ? diaryList.map((diary) => (
-              <Diary
-                key={diary.id}
-                diary={diary}
-                isCardOpen={isCardOpen}
-                setIsCardOpen={setIsCardOpen}
-              />
-            ))
-          : null}
+        {diaryList?.map((diary) => (
+          <Diary
+            key={diary.id}
+            diary={diary}
+            isCardOpen={isCardOpen}
+            setIsCardOpen={setIsCardOpen}
+          />
+        ))}
       </ul>
       {isCardOpen ? (
-        <EditInputModal isCardOpen={isCardOpen} setIsCardOpen={setIsCardOpen} />
+        <EditInputModal
+          isCardOpen={isCardOpen}
+          setIsCardOpen={setIsCardOpen}
+          setDiaryList={setDiaryList}
+        />
       ) : null}
       {isOpen ? (
         <InputModal
