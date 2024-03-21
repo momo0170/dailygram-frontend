@@ -32,3 +32,10 @@ export async function updateDiary(text, id) {
   });
   return response.data;
 }
+
+export async function deleteDiary(id) {
+  await axios({
+    method: 'DELETE',
+    url: `${process.env.REACT_APP_BASE_URL}/diary/${id}`,
+  });
+}

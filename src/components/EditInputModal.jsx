@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IoIosClose } from 'react-icons/io';
 import styles from './css/EditInputModal.module.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { updateDiary } from '../services/diaryService';
+import { deleteDiary, updateDiary } from '../services/diaryService';
 
 export default function EditInputModal({
   isCardOpen,
@@ -21,6 +21,11 @@ export default function EditInputModal({
       );
     });
   };
+  const onDelete = (id) => {
+    setDiaryList((diaryList) => {
+      return diaryList.filter((diary) => diary.id !== id);
+    });
+  };
   const handleUpdate = () => {
     updateDiary(updatedText, id) //
       .then((updatedText) => onUpdate(updatedText)) //
@@ -28,6 +33,17 @@ export default function EditInputModal({
         navigate('/');
         setIsCardOpen(!isCardOpen);
       });
+  };
+  const handleDelete = () => {
+    const check = window.confirm('정말로 삭제하시겠습니까?');
+    if (check) {
+      deleteDiary(id) //
+        .then(() => onDelete(id))
+        .then(() => {
+          navigate('/');
+          setIsCardOpen(!isCardOpen);
+        });
+    }
   };
 
   const handleClose = () => {
@@ -37,7 +53,7 @@ export default function EditInputModal({
   const handleChange = (e) => {
     setUpdatedText(e.target.value);
   };
-  console.log(id);
+
   return (
     <div
       onClick={handleClose}
@@ -62,6 +78,9 @@ export default function EditInputModal({
           ></textarea>
         </section>
         <footer className={styles.footer}>
+          <button onClick={handleDelete} className={styles.deleteBtn}>
+            삭제
+          </button>
           <button onClick={handleUpdate} className={styles.createBtn}>
             수정
           </button>
