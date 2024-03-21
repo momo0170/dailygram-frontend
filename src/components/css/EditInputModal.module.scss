@@ -16,6 +16,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      .closeBtn {
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
     .section {
       display: flex;
       flex-direction: column;
@@ -43,14 +52,6 @@
         padding: 7px 15px;
         font-weight: 700;
         cursor: pointer;
-      }
-      .closeBtn {
-        margin-right: 10px;
-        border: 0;
-        background-color: #e4e4e4;
-        &:hover {
-          background-color: #d2d2d2;
-        }
       }
       .createBtn {
         background-color: black;
