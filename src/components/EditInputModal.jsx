@@ -24,7 +24,10 @@ export default function EditInputModal({
   const handleUpdate = () => {
     updateDiary(updatedText, id) //
       .then((updatedText) => onUpdate(updatedText)) //
-      .then(() => setIsCardOpen(!isCardOpen));
+      .then(() => {
+        navigate('/');
+        setIsCardOpen(!isCardOpen);
+      });
   };
 
   const handleClose = () => {

@@ -5,6 +5,7 @@ import App from './App';
 import { BrowserRouter, createBrowserRouter } from 'react-router-dom';
 import DiaryList from './routes/DiaryList';
 import EditInputModal from './components/EditInputModal';
+import InputModal from './components/InputModal';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <DiaryList />,
+      },
+      {
+        path: 'diary/create',
+        element: <InputModal />,
       },
       {
         path: 'diary/:id',

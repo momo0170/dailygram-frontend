@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import styles from './css/InputModal.module.scss';
 
 import { postDiary } from '../services/diaryService';
+import { useNavigate } from 'react-router-dom';
 
 export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
   const [text, setText] = useState('');
+  const navigate = useNavigate();
   const onCreate = (newDiary) => {
     setDiaryList((diaries) => [newDiary, ...diaries]);
   };
@@ -16,6 +18,7 @@ export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
       })
       .then(() => {
         alert('생성 완료');
+        navigate('/');
         setIsOpen(!isOpen);
       });
   };
@@ -24,6 +27,7 @@ export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
   };
 
   const handleClose = () => {
+    navigate('/');
     setIsOpen(!isOpen);
     setText('');
   };
