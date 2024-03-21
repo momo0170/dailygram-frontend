@@ -42,6 +42,7 @@ export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
             onChange={handleChange}
             className={styles.content}
             value={text}
+            autoFocus
           ></textarea>
         </section>
         <footer className={styles.footer}>
