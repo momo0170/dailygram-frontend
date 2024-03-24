@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './css/Signup.module.scss';
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -32,30 +33,59 @@ export default function Signup() {
   };
   console.log(userInfo);
   return (
-    <main>
-      <div>
-        <div>아이디</div>
-        <input name="id" type="text" onChange={onChange} />
-      </div>
-      <div>
-        <div>비밀번호</div>
-        <input name="password" type="password" onChange={onChange} />
-      </div>
-      <div>
-        <div>이름</div>
-        <input name="name" type="text" onChange={onChange} />
-      </div>
-      <div>
-        <div>닉네임</div>
-        <input name="nickname" type="text" onChange={onChange} />
-      </div>
-      <div>
-        <div>사용자 프로필 URL</div>
-        <input name="url" type="url" onChange={onChange} />
-      </div>
-
-      <button onClick={moveToWelcome}>취소</button>
-      <button onClick={handleSignUp}>가입</button>
+    <main className={styles.main}>
+      <section className={styles.inputs}>
+        <div>
+          <input
+            name="id"
+            type="text"
+            onChange={onChange}
+            placeholder="아이디"
+            autoComplete="off"
+            required
+          />
+          <input
+            name="password"
+            type="password"
+            onChange={onChange}
+            placeholder="비밀번호"
+            autoComplete="off"
+            required
+          />
+          <input
+            name="name"
+            type="text"
+            onChange={onChange}
+            placeholder="이름"
+            autoComplete="off"
+            required
+          />
+          <input
+            name="nickname"
+            type="text"
+            onChange={onChange}
+            placeholder="닉네임"
+            autoComplete="off"
+            required
+          />
+          <input
+            name="url"
+            type="url"
+            onChange={onChange}
+            placeholder="이미지 URL"
+            autoComplete="off"
+            required
+          />
+        </div>
+      </section>
+      <section className={styles.btns}>
+        <button onClick={moveToWelcome} className={styles.cancelBtn}>
+          취소
+        </button>
+        <button onClick={handleSignUp} className={styles.signUpBtn}>
+          가입
+        </button>
+      </section>
     </main>
   );
 }

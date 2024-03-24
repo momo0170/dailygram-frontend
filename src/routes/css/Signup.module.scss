@@ -1,0 +1,49 @@
+$fontSize: 16px;
+$borderRadius: 5px;
+
+.main {
+  height: 100vh;
+  padding: 200px 0;
+  box-sizing: border-box;
+  .inputs {
+    width: 100%;
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      & > input {
+        border: 1px solid black;
+        border-radius: $borderRadius;
+        padding: 10px;
+        font-size: $fontSize;
+        width: 300px;
+      }
+      & > input:focus {
+        outline: none;
+      }
+    }
+  }
+  .btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    & > button {
+      border: none;
+      border-radius: $borderRadius;
+      background-color: transparent;
+      padding: 10px 60px;
+      cursor: pointer;
+      font-size: $fontSize;
+      font-weight: 600;
+    }
+    .cancelBtn {
+      border: 1px solid black;
+    }
+    .signUpBtn {
+      background-color: black;
+      color: white;
+    }
+  }
+}
