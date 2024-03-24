@@ -1,0 +1,36 @@
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .text {
+    height: 40%;
+    font-size: 80px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .btns {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    gap: 40px;
+    & * {
+      border: none;
+      border-radius: 40px;
+      background-color: transparent;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .loginText {
+      background-color: white;
+      border: 1px solid black;
+    }
+    .signupText {
+      background-color: black;
+      color: white;
+    }
+  }
+}

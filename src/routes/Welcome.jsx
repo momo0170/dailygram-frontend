@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './css/Welcome.module.scss';
 
 export default function Welcome() {
   const navigate = useNavigate();
@@ -10,16 +11,16 @@ export default function Welcome() {
     navigate('/signup');
   };
   return (
-    <main>
-      <div className="text">오늘 하루는 어땠나요?</div>
-      <div>
-        <button onClick={moveToLoginPage} className="login">
+    <main className={styles.main}>
+      <section className={styles.text}>오늘 하루는 어땠나요?</section>
+      <section className={styles.btns}>
+        <button onClick={moveToLoginPage} className={styles.loginText}>
           로그인
         </button>
-        <button onClick={moveToSignUpPage} className="signup">
+        <button onClick={moveToSignUpPage} className={styles.signupText}>
           회원가입
         </button>
-      </div>
+      </section>
     </main>
   );
 }
