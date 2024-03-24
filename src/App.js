@@ -1,8 +1,8 @@
 import './App.scss';
-import DiaryList from './routes/DiaryList';
+import Welcome from './routes/Welcome';
 
 function App() {
-  return <DiaryList />;
+  return <Welcome />;
 }
 
 export default App;

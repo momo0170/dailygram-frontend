@@ -16,22 +16,24 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: 'list',
-        element: <DiaryList />,
-      },
-      {
-        path: 'diary/create',
-        element: <InputModal />,
-      },
-      {
-        path: 'diary/:id',
-        element: <EditInputModal />,
+        path: '',
+        element: <Welcome />,
       },
     ],
   },
   {
-    path: '/welcome',
-    element: <Welcome />,
+    path: '/diary',
+    element: <DiaryList />,
+    children: [
+      {
+        path: '/diary/create',
+        element: <InputModal />,
+      },
+      {
+        path: '/diary/:id',
+        element: <EditInputModal />,
+      },
+    ],
   },
   {
     path: '/login',

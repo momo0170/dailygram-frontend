@@ -13,6 +13,7 @@ export default function EditInputModal({
   const {
     state: { text, id },
   } = useLocation();
+
   const navigate = useNavigate();
   const onUpdate = (updatedText) => {
     setDiaryList((diaryList) => {
@@ -30,7 +31,7 @@ export default function EditInputModal({
     updateDiary(updatedText, id) //
       .then((updatedText) => onUpdate(updatedText)) //
       .then(() => {
-        navigate('/');
+        navigate('/diary');
         setIsCardOpen(!isCardOpen);
       });
   };
@@ -40,14 +41,14 @@ export default function EditInputModal({
       deleteDiary(id) //
         .then(() => onDelete(id))
         .then(() => {
-          navigate('/');
+          navigate('/diary');
           setIsCardOpen(!isCardOpen);
         });
     }
   };
 
   const handleClose = () => {
-    navigate('/');
+    navigate('/diary');
     setIsCardOpen(!isCardOpen);
   };
   const handleChange = (e) => {
