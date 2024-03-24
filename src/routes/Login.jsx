@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './css/Login.module.scss';
 
 export default function Login() {
   const [loginInfo, setLoginInfo] = useState({
@@ -26,16 +27,26 @@ export default function Login() {
   };
   console.log(loginInfo);
   return (
-    <main>
-      <form onSubmit={handleLogin}>
-        <input name="id" type="text" placeholder="아이디" onChange={onChange} />
+    <main className={styles.main}>
+      <form onSubmit={handleLogin} className={styles.form}>
+        <input
+          name="id"
+          type="text"
+          placeholder="아이디"
+          onChange={onChange}
+          className={styles.id}
+          autoComplete="off"
+        />
         <input
           name="password"
           type="password"
           placeholder="패스워드"
           onChange={onChange}
+          className={styles.password}
         />
-        <button onClick={handleLogin}>로그인</button>
+        <button onClick={handleLogin} className={styles.loginBtn}>
+          로그인
+        </button>
       </form>
     </main>
   );
