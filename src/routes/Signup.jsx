@@ -25,7 +25,7 @@ export default function Signup() {
     }).then((data) => {
       console.log(data);
       alert('가입이 완료되었습니다!');
-      navigate('/');
+      navigate('/diary');
     });
   };
   const moveToWelcome = () => {

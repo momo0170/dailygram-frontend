@@ -16,32 +16,32 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: '',
+        path: '/',
         element: <Welcome />,
       },
-    ],
-  },
-  {
-    path: '/diary',
-    element: <DiaryList />,
-    children: [
       {
-        path: '/diary/create',
-        element: <InputModal />,
+        path: '/diary',
+        element: <DiaryList />,
+        children: [
+          {
+            path: '/diary/create',
+            element: <InputModal />,
+          },
+          {
+            path: '/diary/:id',
+            element: <EditInputModal />,
+          },
+        ],
       },
       {
-        path: '/diary/:id',
-        element: <EditInputModal />,
+        path: '/login',
+        element: <Login />,
+      },
+      {
+        path: '/signup',
+        element: <Signup />,
       },
     ],
-  },
-  {
-    path: '/login',
-    element: <Login />,
-  },
-  {
-    path: '/signup',
-    element: <Signup />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
