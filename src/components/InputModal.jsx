@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './css/InputModal.module.scss';
 
 import { postDiary } from '../services/diaryService';
@@ -7,11 +7,14 @@ import { useNavigate } from 'react-router-dom';
 export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
   const [text, setText] = useState('');
   const navigate = useNavigate();
+  const [userInfo, setUserInfo] = useState({});
+
+  const { name, nickname, url } = userInfo;
   const onCreate = (newDiary) => {
     setDiaryList((diaries) => [newDiary, ...diaries]);
   };
   const handleCreate = () => {
-    postDiary(text) //
+    postDiary(text, name, nickname, url) //
       .then((newDiary) => {
         onCreate(newDiary);
         setText('');
@@ -31,6 +34,10 @@ export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
     setIsOpen(!isOpen);
     setText('');
   };
+  useEffect(() => {
+    const user = window.localStorage.getItem('user');
+    setUserInfo(JSON.parse(user));
+  }, []);
 
   return (
     <div
