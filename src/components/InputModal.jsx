@@ -4,7 +4,11 @@ import styles from './css/InputModal.module.scss';
 import { postDiary } from '../services/diaryService';
 import { useNavigate } from 'react-router-dom';
 
-export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
+export default function InputModal({
+  isBtnClick,
+  setIsBtnClick,
+  setDiaryList,
+}) {
   const [text, setText] = useState('');
   const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState({});
@@ -22,7 +26,7 @@ export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
       .then(() => {
         alert('생성 완료');
         navigate('/diary');
-        setIsOpen(!isOpen);
+        setIsBtnClick(!isBtnClick);
       });
   };
   const handleChange = (e) => {
@@ -31,7 +35,7 @@ export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
 
   const handleClose = () => {
     navigate('/diary');
-    setIsOpen(!isOpen);
+    setIsBtnClick(!isBtnClick);
     setText('');
   };
   useEffect(() => {
@@ -42,11 +46,13 @@ export default function InputModal({ isOpen, setIsOpen, setDiaryList }) {
   return (
     <div
       onClick={handleClose}
-      className={`${styles.background} ${isOpen ? styles.openBackground : ''}`}
+      className={`${styles.background} ${
+        isBtnClick ? styles.openBackground : ''
+      }`}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`${styles.main} ${isOpen ? styles.openMain : ''}`}
+        className={`${styles.main} ${isBtnClick ? styles.openMain : ''}`}
       >
         <section className={styles.section}>
           <textarea

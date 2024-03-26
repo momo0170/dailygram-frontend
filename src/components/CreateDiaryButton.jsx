@@ -2,10 +2,10 @@ import React from 'react';
 import styles from './css/CreateDiaryButton.module.scss';
 import { useNavigate } from 'react-router-dom';
 
-export default function CreateDiaryButton({ setIsOpen }) {
+export default function CreateDiaryButton({ setIsBtnClick }) {
   const handleClick = () => {
-    navigate('/diary/create');
-    setIsOpen(true);
+    setIsBtnClick(true); // 버튼이 클릭된 상태를 true
+    navigate('/diary/create'); // <InputModal> 로 이동
   };
   const navigate = useNavigate();
   return (

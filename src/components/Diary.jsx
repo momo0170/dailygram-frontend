@@ -2,12 +2,11 @@ import React from 'react';
 import styles from './css/Diary.module.scss';
 import { useNavigate } from 'react-router-dom';
 
-export default function Diary({ diary, isCardOpen, setIsCardOpen }) {
+export default function Diary({ diary, isCardClick, setIsCardClick }) {
   const { nickname, createdAt, text, url, id } = diary;
-
   const navigate = useNavigate();
   const lookDiary = () => {
-    setIsCardOpen(!isCardOpen);
+    setIsCardClick(!isCardClick);
     navigate(`/diary/${id}`, { state: { text, id } });
   };
   return (

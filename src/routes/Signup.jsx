@@ -15,6 +15,7 @@ export default function Signup() {
   const onChange = (e) => {
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
   };
+  // 가입 버튼을 눌렀을 때
   const handleSignUp = () => {
     axios({
       method: 'POST',
@@ -22,14 +23,16 @@ export default function Signup() {
       data: {
         ...userInfo,
       },
-    }).then((data) => {
-      console.log(data);
-      alert('가입이 완료되었습니다!');
-      navigate('/diary');
-    });
+    }) //
+      .then((data) => {
+        console.log(data);
+        alert('가입이 완료되었습니다!');
+        navigate('/'); // home으로 이동
+      });
   };
+  // welcome 페이지로 이동
   const moveToWelcome = () => {
-    navigate('/');
+    navigate('/welcome');
   };
   console.log(userInfo);
   return (

@@ -5,9 +5,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { deleteDiary, updateDiary } from '../services/diaryService';
 
 export default function EditInputModal({
-  isCardOpen,
-  setIsCardOpen,
   setDiaryList,
+  isCardClick,
+  setIsCardClick,
 }) {
   const [updatedText, setUpdatedText] = useState('');
   const {
@@ -32,7 +32,7 @@ export default function EditInputModal({
       .then((updatedText) => onUpdate(updatedText)) //
       .then(() => {
         navigate('/diary');
-        setIsCardOpen(!isCardOpen);
+        setIsCardClick(!isCardClick);
       });
   };
   const handleDelete = () => {
@@ -42,14 +42,14 @@ export default function EditInputModal({
         .then(() => onDelete(id))
         .then(() => {
           navigate('/diary');
-          setIsCardOpen(!isCardOpen);
+          setIsCardClick(!isCardClick);
         });
     }
   };
 
   const handleClose = () => {
     navigate('/diary');
-    setIsCardOpen(!isCardOpen);
+    setIsCardClick(!isCardClick);
   };
   const handleChange = (e) => {
     setUpdatedText(e.target.value);
@@ -59,12 +59,12 @@ export default function EditInputModal({
     <div
       onClick={handleClose}
       className={`${styles.background} ${
-        isCardOpen ? styles.openBackground : ''
+        isCardClick ? styles.openBackground : ''
       }`}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`${styles.main} ${isCardOpen ? styles.openMain : ''}`}
+        className={`${styles.main} ${isCardClick ? styles.openMain : ''}`}
       >
         <header className={styles.header}>
           <button onClick={handleClose} className={styles.closeBtn}>

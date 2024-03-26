@@ -8,9 +8,12 @@ function App() {
 
   useEffect(() => {
     const data = localStorage.getItem('user');
+    // 로그인 데이터가 있으면
     if (data) {
       setUser(JSON.parse(data));
-      navigate('/diary');
+      navigate('/diary'); // 루트 경로로 이동
+    } else {
+      navigate('/welcome'); // 없다면 로그인을 해야 하므로 /welcome 경로로
     }
   }, []);
   return <Outlet context={[user, setUser]} />;

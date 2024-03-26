@@ -19,7 +19,7 @@ export default function Login() {
       },
     }).then((data) => {
       console.log(data);
-      window.localStorage.setItem('user', JSON.stringify(data.data.user[0]));
+      localStorage.setItem('user', JSON.stringify(data.data.user[0]));
       navigate('/diary');
     });
   };
