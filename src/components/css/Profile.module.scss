@@ -1,0 +1,32 @@
+$bgColor: #f6f6f6;
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: $bgColor;
+  border-radius: 10px;
+  padding: 15px;
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .profileImg {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+    .nickname {
+      font-weight: 600;
+    }
+  }
+  .logoutBtn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
