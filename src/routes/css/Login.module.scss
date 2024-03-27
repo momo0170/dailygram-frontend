@@ -6,28 +6,41 @@
   .form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     width: 400px;
-    & * {
-      border: 1px solid black;
+    .idInput,
+    .passwordInput {
+      height: 42px;
+      font-size: 16px;
       padding: 10px;
       border-radius: 5px;
+      border: 1px solid black;
+      box-sizing: border-box;
     }
-    .id,
-    .password {
-      font-size: 16px;
+    .idInput:focus,
+    .passwordInput:focus {
+      border: 2px solid black;
+      outline: none;
     }
-    .id:focus,
-    .password:focus {
-      outline: 0;
+    .idMessage,
+    .passwordMessage {
+      height: 20px;
+      padding: 5px;
+      color: red;
+      font-weight: 600;
     }
     .loginBtn {
+      border-radius: 5px;
       font-size: 20px;
       background-color: black;
       color: white;
       font-weight: 700;
       margin-top: 40px;
+      padding: 10px;
       cursor: pointer;
+    }
+    .idMessage,
+    .passwordMessage {
+      font-size: 13px;
     }
   }
 }
