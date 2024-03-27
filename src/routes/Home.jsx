@@ -5,20 +5,25 @@ import InputModal from '../components/InputModal';
 import EditInputModal from '../components/EditInputModal';
 import { getAllDiary } from '../services/diaryService';
 import styles from './css/Home.module.scss';
+import { useOutletContext } from 'react-router-dom';
 
 export default function Home() {
   const [diaryList, setDiaryList] = useState([]);
   const [isBtnClick, setIsBtnClick] = useState(false);
   const [isCardClick, setIsCardClick] = useState(false);
+  const [user, setUser, isLogin, setIsLogin] = useOutletContext();
 
   useEffect(() => {
     getAllDiary().then((diaries) => setDiaryList(diaries));
   }, []);
-  console.log(isBtnClick);
-  console.log(isCardClick);
+
   return (
     <main className={styles.main}>
-      <Menu setIsBtnClick={setIsBtnClick} />
+      <Menu
+        setIsBtnClick={setIsBtnClick}
+        isLogin={isLogin}
+        setIsLogin={setIsLogin}
+      />
       <DiaryList
         diaryList={diaryList}
         setIsCardClick={setIsCardClick}

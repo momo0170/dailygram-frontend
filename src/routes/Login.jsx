@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import styles from './css/Login.module.scss';
 
 export default function Login() {
+  const [user, setUser, isLogin, setIsLogin] = useOutletContext();
   const [loginInfo, setLoginInfo] = useState({
     id: '',
     password: '',
@@ -18,15 +19,15 @@ export default function Login() {
         ...loginInfo,
       },
     }).then((data) => {
-      console.log(data);
       localStorage.setItem('user', JSON.stringify(data.data.user[0]));
+      setIsLogin((isLogin) => !isLogin);
       navigate('/diary');
     });
   };
   const onChange = (e) => {
     setLoginInfo({ ...loginInfo, [e.target.name]: e.target.value });
   };
-  console.log(loginInfo);
+
   return (
     <main className={styles.main}>
       <form onSubmit={handleLogin} className={styles.form}>

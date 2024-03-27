@@ -3,11 +3,10 @@ import { useNavigate, useOutletContext } from 'react-router-dom';
 import styles from './css/Profile.module.scss';
 
 export default function Profile() {
-  const [user, setUser] = useOutletContext();
-  const navigate = useNavigate();
+  const [user, setUser, isLogin, setIsLogin] = useOutletContext();
   const handleLogout = () => {
     localStorage.clear();
-    navigate('/login');
+    setIsLogin((isLogin) => !isLogin);
   };
   useEffect(() => {
     const data = localStorage.getItem('user');
