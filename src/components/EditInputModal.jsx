@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { IoIosClose } from 'react-icons/io';
 import styles from './css/EditInputModal.module.scss';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useOutletContext } from 'react-router-dom';
 import { deleteDiary, updateDiary } from '../services/diaryService';
 import { DarkModeContext } from '../context/DarkModeContext.jsx';
 
@@ -13,10 +13,11 @@ export default function EditInputModal({
   const [updatedText, setUpdatedText] = useState('');
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
   const {
-    state: { text, id },
+    state: { text, id, nickname },
   } = useLocation();
 
   const navigate = useNavigate();
+  const [user, setUser, isLogin, setIsLogin] = useOutletContext();
   const onUpdate = (updatedText) => {
     setDiaryList((diaryList) => {
       return diaryList.map((diary) =>
@@ -56,7 +57,7 @@ export default function EditInputModal({
   const handleChange = (e) => {
     setUpdatedText(e.target.value);
   };
-
+  console.log(user);
   return (
     <div
       onClick={handleClose}
@@ -88,20 +89,28 @@ export default function EditInputModal({
             className={`${styles.content} ${darkMode ? styles.darkMode : ''}`}
             defaultValue={text}
             onChange={handleChange}
+            disabled={nickname === user.nickname ? false : true}
           ></textarea>
         </section>
         <footer
           className={`${styles.footer} ${darkMode ? styles.darkMode : ''}`}
         >
-          <button onClick={handleDelete} className={styles.deleteBtn}>
-            삭제
-          </button>
-          <button
-            onClick={handleUpdate}
-            className={`${styles.updateBtn} ${darkMode ? styles.darkMode : ''}`}
-          >
-            수정
-          </button>
+          {/* 일기를 작성한 사용자 닉네임과 로그인한 사용자 닉네임이 같다면 */}
+          {nickname === user.nickname ? (
+            <>
+              <button onClick={handleDelete} className={styles.deleteBtn}>
+                삭제
+              </button>
+              <button
+                onClick={handleUpdate}
+                className={`${styles.updateBtn} ${
+                  darkMode ? styles.darkMode : ''
+                }`}
+              >
+                수정
+              </button>
+            </>
+          ) : null}
         </footer>
       </div>
     </div>

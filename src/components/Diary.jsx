@@ -9,7 +9,7 @@ export default function Diary({ diary, isCardClick, setIsCardClick }) {
   const navigate = useNavigate();
   const lookDiary = () => {
     setIsCardClick(!isCardClick);
-    navigate(`/diary/${id}`, { state: { text, id } });
+    navigate(`/diary/${id}`, { state: { text, id, nickname } });
   };
   return (
     // 클릭 시 /diary/:id 로 이동
