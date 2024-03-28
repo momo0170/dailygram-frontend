@@ -1,3 +1,7 @@
+$darMode-bgColor: #151515;
+$darkMode-fontColor: #f6f6f6;
+$darkMode-btnColor: #393939;
+
 .background {
   display: none;
   position: fixed;
@@ -22,6 +26,9 @@
       padding: 20px 20px;
       justify-content: center;
       height: 90%;
+      &.darkMode {
+        background-color: $darMode-bgColor;
+      }
 
       .content {
         resize: none;
@@ -31,12 +38,19 @@
         &:focus {
           outline: none;
         }
+        &.darkMode {
+          background-color: $darMode-bgColor;
+          color: $darkMode-fontColor;
+        }
       }
     }
     .footer {
       display: flex;
       justify-content: flex-end;
       padding: 10px;
+      &.darkMode {
+        background-color: $darMode-bgColor;
+      }
       & button {
         border: 0;
         border-radius: 20px;
@@ -55,6 +69,9 @@
       .createBtn {
         background-color: black;
         color: white;
+        &.darkMode {
+          background-color: $darkMode-btnColor;
+        }
       }
     }
   }

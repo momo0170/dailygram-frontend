@@ -1,5 +1,8 @@
 $bgColor: #f6f6f6;
 $bgColorHover: #e4e4e4;
+$darkMode-subBgColor: #272727;
+$darkMode-fontColor: #f6f6f6;
+$darkMode-bgColorHover: #4b4b4b;
 
 .main {
   display: flex;
@@ -24,6 +27,9 @@ $bgColorHover: #e4e4e4;
       }
       .nickname {
         font-weight: 600;
+        &.darkMode {
+          color: $darkMode-fontColor;
+        }
       }
     }
     .btnAndIcon {
@@ -38,6 +44,9 @@ $bgColorHover: #e4e4e4;
         &:hover {
           text-decoration: underline;
         }
+        &.darkMode {
+          color: $darkMode-fontColor;
+        }
       }
       .arrow {
         cursor: pointer;
@@ -47,14 +56,23 @@ $bgColorHover: #e4e4e4;
           box-sizing: border-box;
           padding: 1px;
         }
-      }
-      .arrow.clicked {
-        transform: rotate(180deg);
+        &.darkMode {
+          color: $darkMode-fontColor;
+        }
+        &.darkMode:hover {
+          background-color: $darkMode-bgColorHover;
+        }
+        &.clicked {
+          transform: rotate(180deg);
+        }
       }
     }
   }
+  &.darkMode {
+    background-color: $darkMode-subBgColor;
+  }
 
-  .darkMode {
+  .darkModeBtn {
     display: none;
     align-items: center;
     gap: 30px;
@@ -64,8 +82,17 @@ $bgColorHover: #e4e4e4;
     &:hover {
       background-color: $bgColorHover;
     }
-  }
-  .darkMode.clicked {
-    display: flex;
+    &.darkMode:hover {
+      background-color: $darkMode-bgColorHover;
+    }
+    &.clicked {
+      display: flex;
+    }
+    .icon.darkMode {
+      color: $darkMode-fontColor;
+    }
+    .text.darkMode {
+      color: $darkMode-fontColor;
+    }
   }
 }

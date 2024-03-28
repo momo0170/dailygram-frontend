@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './css/InputModal.module.scss';
 
 import { postDiary } from '../services/diaryService';
 import { useNavigate } from 'react-router-dom';
+import { DarkModeContext } from '../context/DarkModeContext.jsx';
 
 export default function InputModal({
   isBtnClick,
@@ -12,6 +13,7 @@ export default function InputModal({
   const [text, setText] = useState('');
   const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState({});
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   const { name, nickname, url } = userInfo;
   const onCreate = (newDiary) => {
@@ -54,19 +56,26 @@ export default function InputModal({
         onClick={(e) => e.stopPropagation()}
         className={`${styles.main} ${isBtnClick ? styles.openMain : ''}`}
       >
-        <section className={styles.section}>
+        <section
+          className={`${styles.section} ${darkMode ? styles.darkMode : ''}`}
+        >
           <textarea
             onChange={handleChange}
-            className={styles.content}
+            className={`${styles.content} ${darkMode ? styles.darkMode : ''}`}
             value={text}
             autoFocus
           ></textarea>
         </section>
-        <footer className={styles.footer}>
+        <footer
+          className={`${styles.footer} ${darkMode ? styles.darkMode : ''}`}
+        >
           <button onClick={handleClose} className={styles.closeBtn}>
             취소
           </button>
-          <button onClick={handleCreate} className={styles.createBtn}>
+          <button
+            onClick={handleCreate}
+            className={`${styles.createBtn} ${darkMode ? styles.darkMode : ''}`}
+          >
             생성
           </button>
         </footer>

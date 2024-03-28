@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 import styles from './css/Login.module.scss';
+import { DarkModeContext } from '../context/DarkModeContext.jsx';
 
 export default function Login() {
   const [user, setUser, isLogin, setIsLogin] = useOutletContext();
@@ -11,6 +12,8 @@ export default function Login() {
   });
   const [messageOfId, setMessageOfId] = useState('');
   const [messageOfPassword, setMessageOfPassword] = useState('');
+  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+
   const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
@@ -51,27 +54,29 @@ export default function Login() {
   console.log(messageOfPassword);
 
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main} ${darkMode ? styles.darkMode : ''}`}>
       <form onSubmit={handleLogin} className={styles.form}>
         <input
           name="id"
           type="text"
           placeholder="아이디"
           onChange={onChange}
-          className={styles.idInput}
+          className={`${styles.idInput} ${darkMode ? styles.darkMode : ''} ${
+            messageOfId ? styles.focusId : ''
+          }`}
           autoComplete="off"
-          style={
-            messageOfId
-              ? {
-                  outline: '2px solid red',
-                  border: 'none',
-                }
-              : {}
-          }
+          // style={
+          //   messageOfId
+          //     ? {
+          //         outline: '2px solid red',
+          //         border: 'none',
+          //       }
+          //     : {}
+          // }
         />
         <div
           style={messageOfId ? { opacity: 1 } : { opacity: 0 }}
-          className={styles.idMessage}
+          className={`${styles.idMessage} ${darkMode ? styles.darkMode : ''}`}
         >
           {messageOfId}
         </div>
@@ -81,23 +86,30 @@ export default function Login() {
           type="password"
           placeholder="패스워드"
           onChange={onChange}
-          className={styles.passwordInput}
-          style={
-            messageOfPassword
-              ? {
-                  outline: '2px solid red',
-                  border: 'none',
-                }
-              : {}
-          }
+          className={`${styles.passwordInput} ${
+            darkMode ? styles.darkMode : ''
+          } ${messageOfPassword ? styles.focusPassword : ''}`}
+          // style={
+          //   messageOfPassword
+          //     ? {
+          //         outline: '2px solid red',
+          //         border: 'none',
+          //       }
+          //     : {}
+          // }
         />
         <div
           style={messageOfPassword ? { opacity: 1 } : { opacity: 0 }}
-          className={styles.passwordMessage}
+          className={`${styles.passwordMessage} ${
+            darkMode ? styles.darkMode : ''
+          }`}
         >
           {messageOfPassword}
         </div>
-        <button onClick={handleLogin} className={styles.loginBtn}>
+        <button
+          onClick={handleLogin}
+          className={`${styles.loginBtn} ${darkMode ? styles.darkMode : ''}`}
+        >
           로그인
         </button>
       </form>

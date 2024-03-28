@@ -1,4 +1,6 @@
 $bgColor: #f6f6f6;
+$darkMode-subBgColor: #272727;
+$darkMode-fontColor: #f6f6f6;
 
 .section {
   display: flex;
@@ -8,9 +10,15 @@ $bgColor: #f6f6f6;
   padding: 15px;
   gap: 10px;
   border-radius: 10px;
+  &.darkMode {
+    background-color: $darkMode-subBgColor;
+  }
   .text {
     font-size: 20px;
     font-weight: 500;
+    &.darkMode {
+      color: $darkMode-fontColor;
+    }
   }
   .btn {
     display: flex;
@@ -19,6 +27,20 @@ $bgColor: #f6f6f6;
     cursor: pointer;
     &:hover {
       text-decoration: underline;
+    }
+    &.darkMode:hover {
+      text-decoration-color: $darkMode-fontColor;
+    }
+
+    .btnIcon {
+      &.darkMode {
+        color: $darkMode-fontColor;
+      }
+    }
+    .btnText {
+      &.darkMode {
+        color: $darkMode-fontColor;
+      }
     }
   }
 }

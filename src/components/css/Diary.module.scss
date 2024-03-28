@@ -1,5 +1,9 @@
 $fontSize: 12px;
 $fontColor: #515151;
+$darkMode-bgColor: #272727;
+$darkMode-fontColor: #f6f6f6;
+$darkMode-footerBgColor: #1e1e1e;
+$darkMode-fontColorDarker: #818181;
 
 %card-hover {
   transition: transform 200ms ease-in-out;
@@ -15,6 +19,9 @@ li {
   overflow: hidden;
   box-shadow: 1px 1px 5px gray;
   cursor: pointer;
+  &.darkMode {
+    box-shadow: 1px 1px 5px #606060;
+  }
   &:hover {
     transform: translateY(-5px);
     @extend %card-hover;
@@ -25,6 +32,10 @@ li {
   .cardImg {
     flex-grow: 3;
     overflow: hidden;
+    &.darkMode {
+      background-color: $darkMode-bgColor;
+      color: $darkMode-fontColor;
+    }
   }
   .info {
     display: flex;
@@ -44,11 +55,20 @@ li {
       }
       .nickname {
         font-size: $fontSize;
+        &.darkMode {
+          color: $darkMode-fontColor;
+        }
       }
     }
     .createdAt {
       font-size: $fontSize;
       color: $fontColor;
+      &.darkMode {
+        color: $darkMode-fontColorDarker;
+      }
+    }
+    &.darkMode {
+      background-color: $darkMode-footerBgColor;
     }
   }
 }

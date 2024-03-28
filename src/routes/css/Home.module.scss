@@ -1,4 +1,9 @@
+$darkMode-bgColor: #151515;
+
 .main {
   display: flex;
   height: 100vh;
+}
+.main.darkMode {
+  background-color: $darkMode-bgColor;
 }

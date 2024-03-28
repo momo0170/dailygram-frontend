@@ -1,12 +1,23 @@
+$darkMode-bgColor: #151515;
+$darkMode-btnColor: #393939;
+$darkMode-fontColor: #f6f6f6;
+$darkMode-subBgColor: #272727;
+$darkMode-subFontColor: #818181;
+$darkMode-errorColor: #c90000;
+
 .main {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  &.darkMode {
+    background-color: $darkMode-bgColor;
+  }
   .form {
     display: flex;
     flex-direction: column;
     width: 400px;
+    // id, password 입력창
     .idInput,
     .passwordInput {
       height: 42px;
@@ -15,20 +26,45 @@
       border-radius: 5px;
       border: 1px solid black;
       box-sizing: border-box;
+      // focus 되었을 때
+      &:focus {
+        border: 2px solid black;
+        outline: none;
+      }
+      // 메세지가 나타날 때
+      &.focusId,
+      &.focusPassword {
+        border: 2px solid red;
+        outline: none;
+      }
+      // 다크모드일 때
+      &.darkMode {
+        background-color: $darkMode-subBgColor;
+        color: $darkMode-fontColor;
+      }
+      // 다크모드에서 focus 되었을 때
+      &.darkMode:focus {
+        border: 2px solid $darkMode-subFontColor;
+      }
+      // 다크모드에서 메세지가 나타날 때
+      &.darkMode.focusId,
+      &.darkMode.focusPassword {
+        border: 2px solid $darkMode-errorColor;
+      }
     }
-    .idInput:focus,
-    .passwordInput:focus {
-      border: 2px solid black;
-      outline: none;
-    }
+
     .idMessage,
     .passwordMessage {
       height: 20px;
       padding: 5px;
       color: red;
       font-weight: 600;
+      &.darkMode {
+        color: $darkMode-errorColor;
+      }
     }
     .loginBtn {
+      border: none;
       border-radius: 5px;
       font-size: 20px;
       background-color: black;
@@ -37,6 +73,10 @@
       margin-top: 40px;
       padding: 10px;
       cursor: pointer;
+      &.darkMode {
+        background-color: $darkMode-btnColor;
+        color: $darkMode-fontColor;
+      }
     }
     .idMessage,
     .passwordMessage {

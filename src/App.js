@@ -1,6 +1,7 @@
 import { Outlet, useNavigate } from 'react-router-dom';
 import './App.scss';
 import { useEffect, useState } from 'react';
+import DarkModeContextProvider from './context/DarkModeContext.jsx';
 
 function App() {
   const navigate = useNavigate();
@@ -19,7 +20,11 @@ function App() {
     }
   }, []);
 
-  return <Outlet context={[user, setUser, isLogin, setIsLogin]} />;
+  return (
+    <DarkModeContextProvider>
+      <Outlet context={[user, setUser, isLogin, setIsLogin]} />
+    </DarkModeContextProvider>
+  );
 }
 
 export default App;

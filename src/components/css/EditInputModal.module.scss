@@ -1,3 +1,8 @@
+$darMode-bgColor: #151515;
+$darkMode-fontColor: #f6f6f6;
+$darkMode-btnColor: #393939;
+$darkMode-subFontColor: #818181;
+
 .background {
   display: none;
   position: fixed;
@@ -19,10 +24,16 @@
     .header {
       display: flex;
       justify-content: flex-end;
+      &.darkMode {
+        background-color: $darMode-bgColor;
+      }
       .closeBtn {
         border: 0;
         background-color: transparent;
         cursor: pointer;
+        .icon.darkMode {
+          color: $darkMode-subFontColor;
+        }
       }
     }
     .section {
@@ -31,12 +42,19 @@
       padding: 20px 20px;
       justify-content: center;
       height: 90%;
+      &.darkMode {
+        background-color: $darMode-bgColor;
+      }
 
       .content {
         resize: none;
         border: 0;
         flex-grow: 1;
         font-size: 14px;
+        &.darkMode {
+          background-color: $darMode-bgColor;
+          color: $darkMode-fontColor;
+        }
         &:focus {
           outline: none;
         }
@@ -46,6 +64,9 @@
       display: flex;
       justify-content: flex-end;
       padding: 10px;
+      &.darkMode {
+        background-color: $darMode-bgColor;
+      }
       & button {
         border: 0;
         border-radius: 20px;
@@ -61,9 +82,12 @@
           background-color: #ed0000;
         }
       }
-      .createBtn {
+      .updateBtn {
         background-color: black;
         color: white;
+        &.darkMode {
+          background-color: $darkMode-btnColor;
+        }
       }
     }
   }
