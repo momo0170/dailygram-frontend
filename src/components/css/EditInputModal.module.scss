@@ -1,4 +1,4 @@
-$darMode-bgColor: #151515;
+$darkMode-bgColor: #151515;
 $darkMode-fontColor: #f6f6f6;
 $darkMode-btnColor: #393939;
 $darkMode-subFontColor: #818181;
@@ -25,7 +25,7 @@ $darkMode-subFontColor: #818181;
       display: flex;
       justify-content: flex-end;
       &.darkMode {
-        background-color: $darMode-bgColor;
+        background-color: $darkMode-bgColor;
       }
       .closeBtn {
         border: 0;
@@ -43,7 +43,7 @@ $darkMode-subFontColor: #818181;
       justify-content: center;
       height: 90%;
       &.darkMode {
-        background-color: $darMode-bgColor;
+        background-color: $darkMode-bgColor;
       }
 
       .content {
@@ -52,11 +52,17 @@ $darkMode-subFontColor: #818181;
         flex-grow: 1;
         font-size: 14px;
         &.darkMode {
-          background-color: $darMode-bgColor;
+          background-color: $darkMode-bgColor;
           color: $darkMode-fontColor;
+        }
+        &.darkMode:disabled {
+          background-color: $darkMode-bgColor;
         }
         &:focus {
           outline: none;
+        }
+        &:disabled {
+          background-color: white;
         }
       }
     }
@@ -65,7 +71,7 @@ $darkMode-subFontColor: #818181;
       justify-content: flex-end;
       padding: 10px;
       &.darkMode {
-        background-color: $darMode-bgColor;
+        background-color: $darkMode-bgColor;
       }
       & button {
         border: 0;
