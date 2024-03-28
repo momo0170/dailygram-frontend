@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import styles from './css/Signup.module.scss';
 
 export default function Signup() {
   const navigate = useNavigate();
+  const [user, setUser, isLogin, setIsLogin] = useOutletContext();
   const [userInfo, setUserInfo] = useState({
     id: '',
     password: '',
@@ -27,7 +28,9 @@ export default function Signup() {
       .then((data) => {
         console.log(data);
         alert('가입이 완료되었습니다!');
-        navigate('/'); // home으로 이동
+        localStorage.setItem('user', JSON.stringify(data.data.currentUser));
+        setIsLogin((isLogin) => !isLogin);
+        navigate('/diary'); // home으로 이동
       });
   };
   // welcome 페이지로 이동
