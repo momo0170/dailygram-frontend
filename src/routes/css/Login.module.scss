@@ -90,4 +90,15 @@ $darkMode-errorColor: #c90000;
       font-size: 13px;
     }
   }
+  .signup {
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: gray;
+    font-weight: 600;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

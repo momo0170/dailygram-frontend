@@ -114,6 +114,9 @@ export default function Login() {
           로그인
         </button>
       </form>
+      <button onClick={() => navigate('/signup')} className={styles.signup}>
+        회원가입
+      </button>
     </main>
   );
 }
