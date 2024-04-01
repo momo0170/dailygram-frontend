@@ -15,6 +15,8 @@ export default function Login() {
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   const navigate = useNavigate();
+
+  // 로그인 버튼 클릭 시
   const handleLogin = (e) => {
     e.preventDefault();
     axios({
@@ -25,8 +27,8 @@ export default function Login() {
       },
     })
       .then((data) => {
+        setIsLogin(!isLogin);
         localStorage.setItem('user', JSON.stringify(data.data.user[0]));
-        setIsLogin((isLogin) => !isLogin);
         navigate('/diary');
       })
       .catch((error) => {
@@ -50,8 +52,6 @@ export default function Login() {
   const onChange = (e) => {
     setLoginInfo({ ...loginInfo, [e.target.name]: e.target.value });
   };
-  console.log(messageOfId);
-  console.log(messageOfPassword);
 
   return (
     <main className={`${styles.main} ${darkMode ? styles.darkMode : ''}`}>

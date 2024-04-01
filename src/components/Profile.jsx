@@ -11,9 +11,10 @@ export default function Profile() {
   const [isClick, setIsClick] = useState(false);
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
+  // 로그아웃 버튼 클릭 시
   const handleLogout = () => {
+    setIsLogin(!isLogin);
     localStorage.clear();
-    setIsLogin((isLogin) => !isLogin);
   };
   useEffect(() => {
     const data = localStorage.getItem('user');
