@@ -55,6 +55,7 @@ export default function Login() {
 
   return (
     <main className={`${styles.main} ${darkMode ? styles.darkMode : ''}`}>
+      <header className={styles.logo}>Dailygram</header>
       <form onSubmit={handleLogin} className={styles.form}>
         <input
           name="id"
