@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styles from './css/Diary.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { DarkModeContext } from '../context/DarkModeContext.jsx';
+import convertDate from '../util/convertDate.js';
 
 export default function Diary({ diary, isCardClick, setIsCardClick }) {
   const { nickname, createdAt, text, url, id } = diary;
@@ -11,11 +12,11 @@ export default function Diary({ diary, isCardClick, setIsCardClick }) {
     setIsCardClick(!isCardClick);
     navigate(`/diary/${id}`, { state: { text, id, nickname } });
   };
+
   return (
     // 클릭 시 /diary/:id 로 이동
     <li onClick={lookDiary} className={darkMode ? styles.darkMode : ''}>
-      {/* text는 추후에 카드 이미지로 변경 예정 */}
-      <div className={`${styles.cardImg} ${darkMode ? styles.darkMode : ''}`}>
+      <div className={`${styles.text} ${darkMode ? styles.darkMode : ''}`}>
         {text}
       </div>
       <div className={`${styles.info} ${darkMode ? styles.darkMode : ''}`}>
@@ -30,7 +31,7 @@ export default function Diary({ diary, isCardClick, setIsCardClick }) {
         <div
           className={`${styles.createdAt} ${darkMode ? styles.darkMode : ''}`}
         >
-          {createdAt.slice(0, 15)}
+          {convertDate(createdAt)}
         </div>
       </div>
     </li>

@@ -29,7 +29,8 @@ li {
   &:not(:hover) {
     @extend %card-hover;
   }
-  .cardImg {
+  .text {
+    padding: 10px;
     flex-grow: 3;
     overflow: hidden;
     &.darkMode {
