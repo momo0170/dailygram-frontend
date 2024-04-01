@@ -7,7 +7,13 @@ export async function getAllDiary() {
   });
   return response.data;
 }
-
+export async function getDiaryByNickname(nickname) {
+  const response = await axios({
+    method: 'GET',
+    url: `${process.env.REACT_APP_BASE_URL}/diary?nickname=${nickname}`,
+  });
+  return response.data;
+}
 export async function postDiary(text, name, nickname, url) {
   const response = await axios({
     method: 'POST',

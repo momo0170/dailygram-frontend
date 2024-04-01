@@ -7,30 +7,30 @@ import { getAllDiary } from '../services/diaryService';
 import styles from './css/Home.module.scss';
 import { useOutletContext } from 'react-router-dom';
 import { DarkModeContext } from '../context/DarkModeContext';
+import Navbar from '../components/Navbar';
 
 export default function Home() {
   const [diaryList, setDiaryList] = useState([]);
   const [isBtnClick, setIsBtnClick] = useState(false);
   const [isCardClick, setIsCardClick] = useState(false);
-  const [user, setUser, isLogin, setIsLogin] = useOutletContext();
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
   useEffect(() => {
     getAllDiary().then((diaries) => setDiaryList(diaries));
   }, []);
   console.log(darkMode);
+  console.log(diaryList);
   return (
     <main className={`${styles.main} ${darkMode ? styles.darkMode : ''}`}>
-      <Menu
-        setIsBtnClick={setIsBtnClick}
-        isLogin={isLogin}
-        setIsLogin={setIsLogin}
-      />
-      <DiaryList
-        diaryList={diaryList}
-        setIsCardClick={setIsCardClick}
-        isCardClick={isCardClick}
-      />
+      <Menu setIsBtnClick={setIsBtnClick} />
+      <section className={styles.section}>
+        <Navbar diaryList={diaryList} setDiaryList={setDiaryList} />
+        <DiaryList
+          diaryList={diaryList}
+          setIsCardClick={setIsCardClick}
+          isCardClick={isCardClick}
+        />
+      </section>
       {isBtnClick ? (
         <InputModal
           setDiaryList={setDiaryList}
