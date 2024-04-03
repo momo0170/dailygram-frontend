@@ -55,25 +55,19 @@ export default function Login() {
 
   return (
     <main className={`${styles.main} ${darkMode ? styles.darkMode : ''}`}>
-      <header className={styles.logo}>Dailygram</header>
+      <header className={`${styles.logo} ${darkMode ? styles.darkMode : ''}`}>
+        Dailygram
+      </header>
       <form onSubmit={handleLogin} className={styles.form}>
         <input
           name="id"
           type="text"
           placeholder="아이디"
           onChange={onChange}
+          autoComplete="off"
           className={`${styles.idInput} ${darkMode ? styles.darkMode : ''} ${
             messageOfId ? styles.focusId : ''
           }`}
-          autoComplete="off"
-          // style={
-          //   messageOfId
-          //     ? {
-          //         outline: '2px solid red',
-          //         border: 'none',
-          //       }
-          //     : {}
-          // }
         />
         <div
           style={messageOfId ? { opacity: 1 } : { opacity: 0 }}
@@ -87,17 +81,10 @@ export default function Login() {
           type="password"
           placeholder="패스워드"
           onChange={onChange}
+          autoComplete="off"
           className={`${styles.passwordInput} ${
             darkMode ? styles.darkMode : ''
           } ${messageOfPassword ? styles.focusPassword : ''}`}
-          // style={
-          //   messageOfPassword
-          //     ? {
-          //         outline: '2px solid red',
-          //         border: 'none',
-          //       }
-          //     : {}
-          // }
         />
         <div
           style={messageOfPassword ? { opacity: 1 } : { opacity: 0 }}
