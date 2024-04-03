@@ -106,3 +106,49 @@ $darkMode-subFontColor: #818181;
 .openBackground {
   display: block;
 }
+// 모바일 세로
+@media (min-width: 360px) and (max-width: 767px) {
+  .background {
+    .main {
+      width: 101%;
+      height: 100%;
+      z-index: 1;
+      border-radius: 0%;
+      .footer {
+        justify-content: space-between;
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// 태블릿 세로
+@media (min-width: 768px) and (max-width: 1024px) {
+  .background {
+    .main {
+      width: 80%;
+      height: 70%;
+      .footer {
+        justify-content: space-between;
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+// 태블릿 가로
+@media (min-width: 1025px) and (max-width: 1279px) {
+  .background {
+    .main {
+      .footer {
+        justify-content: space-between;
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

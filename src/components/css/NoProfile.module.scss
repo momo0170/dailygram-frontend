@@ -1,6 +1,7 @@
 $bgColor: #f6f6f6;
 $darkMode-subBgColor: #272727;
 $darkMode-fontColor: #f6f6f6;
+$darkMode-btnColor: #393939;
 
 .section {
   display: flex;
@@ -10,9 +11,6 @@ $darkMode-fontColor: #f6f6f6;
   padding: 15px;
   gap: 10px;
   border-radius: 10px;
-  &.darkMode {
-    background-color: $darkMode-subBgColor;
-  }
   .text {
     font-size: 20px;
     font-weight: 500;
@@ -28,6 +26,7 @@ $darkMode-fontColor: #f6f6f6;
     &:hover {
       text-decoration: underline;
     }
+
     &.darkMode:hover {
       text-decoration-color: $darkMode-fontColor;
     }
@@ -39,8 +38,57 @@ $darkMode-fontColor: #f6f6f6;
     }
     .btnText {
       &.darkMode {
+        background-color: $darkMode-btnColor;
         color: $darkMode-fontColor;
       }
     }
   }
+}
+// 모바일 세로
+@media (min-width: 360px) and (max-width: 767px) {
+  .section {
+    background-color: transparent;
+    .text {
+      font-size: 14px;
+    }
+    .btn {
+      .btnIcon {
+        display: none;
+      }
+      .btnText {
+        background-color: black;
+        color: white;
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+// 태블릿 세로
+@media (min-width: 768px) and (max-width: 1024px) {
+  .section {
+    background-color: transparent;
+    .text {
+      font-size: 14px;
+    }
+    .btn {
+      .btnIcon {
+        display: none;
+      }
+      .btnText {
+        background-color: black;
+        color: white;
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+// 태블릿 가로
+@media (min-width: 1025px) and (max-width: 1279px) {
 }

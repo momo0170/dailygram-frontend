@@ -1,3 +1,5 @@
+$darkMode-fontColor: #f6f6f6;
+
 .nav {
   display: flex;
   justify-content: flex-end;
@@ -6,5 +8,8 @@
     border: none;
     cursor: pointer;
     background-color: transparent;
+    &.darkMode {
+      color: $darkMode-fontColor;
+    }
   }
 }

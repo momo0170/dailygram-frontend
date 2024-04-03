@@ -96,3 +96,35 @@ $darkMode-bgColorHover: #4b4b4b;
     }
   }
 }
+
+// 모바일 세로
+@media (min-width: 360px) and (max-width: 767px) {
+  .main {
+    background-color: transparent;
+    .col {
+      .info {
+      }
+    }
+    .darkModeBtn {
+      padding: 0;
+      gap: 10px;
+      .icon {
+        width: 20px;
+        height: 20px;
+      }
+      .text {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// 태블릿 세로
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main {
+    background-color: transparent;
+  }
+}
+// 태블릿 가로
+@media (min-width: 1025px) and (max-width: 1279px) {
+}

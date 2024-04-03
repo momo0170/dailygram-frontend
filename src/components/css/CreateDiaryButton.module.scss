@@ -11,15 +11,33 @@ $darkMode-btnfontColor: #f6f6f6;
   padding: 10px;
   cursor: pointer;
   font-weight: 700;
-  &:hover {
-    transform: scale(1.05);
-    transition: transform 200ms ease-in-out;
-  }
-  &:not(:hover) {
-    transition: transform 200ms ease-in-out;
-  }
 }
 .btn.darkMode {
   background-color: $darkMode-btnColor;
   color: $darkMode-btnfontColor;
+}
+// 모바일 세로
+@media (min-width: 360px) and (max-width: 767px) {
+  .btn {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+    padding: 15px 10px;
+  }
+}
+
+// 태블릿 세로
+@media (min-width: 768px) and (max-width: 1024px) {
+  .btn {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    z-index: 1;
+    padding: 15px 10px;
+  }
 }

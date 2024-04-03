@@ -19,6 +19,9 @@ $darkMode-errorColor: #c90000;
     top: 20%;
     font-size: 60px;
     font-weight: 600;
+    &.darkMode {
+      color: $darkMode-fontColor;
+    }
   }
   .form {
     display: flex;
@@ -101,4 +104,30 @@ $darkMode-errorColor: #c90000;
       text-decoration: underline;
     }
   }
+}
+// 모바일 세로
+@media (min-width: 360px) and (max-width: 767px) {
+  .main {
+    .logo {
+      top: 15%;
+      font-size: 40px;
+    }
+    .form {
+      width: 80vw;
+      .idInput::placeholder,
+      .passwordInput::placeholder {
+        font-size: 14px;
+      }
+      .loginBtn {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// 태블릿 세로
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+// 태블릿 가로
+@media (min-width: 1025px) and (max-width: 1279px) {
 }

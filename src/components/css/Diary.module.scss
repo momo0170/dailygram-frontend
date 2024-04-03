@@ -73,3 +73,16 @@ li {
     }
   }
 }
+// 모바일 세로
+@media (min-width: 360px) and (max-width: 767px) {
+  li {
+    height: 100%;
+    .text {
+      font-size: 12px;
+    }
+  }
+}
+
+// 태블릿 세로
+@media (min-width: 768px) and (max-width: 1024px) {
+}

@@ -15,3 +15,20 @@ $darkMode-bgColor: #151515;
 .main.darkMode {
   background-color: $darkMode-bgColor;
 }
+
+// 모바일 세로
+@media (min-width: 360px) and (max-width: 767px) {
+  .main {
+    flex-direction: column;
+  }
+}
+
+// 태블릿 세로
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main {
+    flex-direction: column;
+  }
+}
+// 태블릿 가로
+@media (min-width: 1025px) and (max-width: 1279px) {
+}
