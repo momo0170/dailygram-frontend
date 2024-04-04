@@ -26,7 +26,6 @@ export default function InputModal({
         setText('');
       })
       .then(() => {
-        alert('생성 완료');
         navigate('/diary');
         setIsBtnClick(!isBtnClick);
       });
