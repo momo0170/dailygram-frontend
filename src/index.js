@@ -9,6 +9,7 @@ import Welcome from './routes/Welcome';
 import Login from './routes/Login';
 import Signup from './routes/Signup';
 import Home from './routes/Home';
+import './fonts/Font.css';
 
 const router = createBrowserRouter([
   {

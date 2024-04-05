@@ -1,6 +1,7 @@
 $darMode-bgColor: #151515;
 $darkMode-fontColor: #f6f6f6;
 $darkMode-btnColor: #393939;
+$font-family: 'Noto Sans KR';
 
 .background {
   display: none;
@@ -35,6 +36,7 @@ $darkMode-btnColor: #393939;
         border: 0;
         flex-grow: 1;
         font-size: 14px;
+        font-family: var(--font-family);
         &:focus {
           outline: none;
         }

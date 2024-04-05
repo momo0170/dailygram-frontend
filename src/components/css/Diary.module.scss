@@ -1,5 +1,8 @@
-$fontSize: 12px;
-$fontColor: #515151;
+$font-family: 'Noto Sans KR';
+$font-nickname: 14px;
+$font-date: 12px;
+$font-text: 13px;
+$font-text-color: #485057;
 $darkMode-bgColor: #272727;
 $darkMode-fontColor: #f6f6f6;
 $darkMode-footerBgColor: #1e1e1e;
@@ -33,6 +36,9 @@ li {
     padding: 10px;
     flex-grow: 3;
     overflow: hidden;
+    font-size: $font-text;
+    font-family: $font-family;
+    color: $font-text-color;
     &.darkMode {
       background-color: $darkMode-bgColor;
       color: $darkMode-fontColor;
@@ -55,15 +61,16 @@ li {
         border-radius: 50%;
       }
       .nickname {
-        font-size: $fontSize;
+        font-size: $font-nickname;
+        font-weight: 500;
         &.darkMode {
           color: $darkMode-fontColor;
         }
       }
     }
     .createdAt {
-      font-size: $fontSize;
-      color: $fontColor;
+      font-size: $font-date;
+      color: $font-text-color;
       &.darkMode {
         color: $darkMode-fontColorDarker;
       }
@@ -77,9 +84,6 @@ li {
 @media (min-width: 360px) and (max-width: 767px) {
   li {
     height: 100%;
-    .text {
-      font-size: 12px;
-    }
   }
 }
 

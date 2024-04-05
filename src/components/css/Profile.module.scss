@@ -27,6 +27,7 @@ $darkMode-bgColorHover: #4b4b4b;
       }
       .nickname {
         font-weight: 600;
+        font-size: 18px;
         &.darkMode {
           color: $darkMode-fontColor;
         }
@@ -41,6 +42,8 @@ $darkMode-bgColorHover: #4b4b4b;
         background-color: transparent;
         padding: 0;
         cursor: pointer;
+        color: black;
+        font-size: 16px;
         &:hover {
           text-decoration: underline;
         }
@@ -102,7 +105,10 @@ $darkMode-bgColorHover: #4b4b4b;
   .main {
     background-color: transparent;
     .col {
-      .info {
+      .btnAndIcon {
+        .logoutBtn {
+          color: black;
+        }
       }
     }
     .darkModeBtn {
@@ -123,6 +129,18 @@ $darkMode-bgColorHover: #4b4b4b;
 @media (min-width: 768px) and (max-width: 1024px) {
   .main {
     background-color: transparent;
+    .col {
+      .info {
+        .nickname {
+          font-size: 20px;
+        }
+      }
+      .btnAndIcon {
+        .logoutBtn {
+          color: black;
+        }
+      }
+    }
   }
 }
 // 태블릿 가로

@@ -11,6 +11,7 @@ $darkMode-btnfontColor: #f6f6f6;
   padding: 10px;
   cursor: pointer;
   font-weight: 700;
+  font-size: 16px;
 }
 .btn.darkMode {
   background-color: $darkMode-btnColor;
@@ -26,6 +27,7 @@ $darkMode-btnfontColor: #f6f6f6;
     right: 0;
     border-radius: 0;
     padding: 15px 10px;
+    font-size: 18px;
   }
 }
 
@@ -39,5 +41,6 @@ $darkMode-btnfontColor: #f6f6f6;
     border-radius: 0;
     z-index: 1;
     padding: 15px 10px;
+    font-size: 18px;
   }
 }
