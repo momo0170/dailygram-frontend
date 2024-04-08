@@ -1,17 +1,23 @@
 $darkMode-bgColor: #151515;
 .main {
   display: flex;
+  height: 100%;
+  margin: 0px 20px;
+  margin-bottom: 20px;
+  overflow-y: scroll;
+  box-sizing: border-box;
   ul {
+    overflow-y: scroll;
+    height: 100%;
     padding-left: 0;
+    padding-top: 5px;
+    box-sizing: border-box;
     margin: 0;
     flex-grow: 1;
-    padding: 20px;
-    padding-top: 5px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-template-rows: repeat(3, 200px);
     gap: 30px;
-    background-color: white;
     &.darkMode {
       background-color: $darkMode-bgColor;
     }
@@ -20,10 +26,11 @@ $darkMode-bgColor: #151515;
 // 모바일 세로
 @media (min-width: 360px) and (max-width: 767px) {
   .main {
+    overflow-y: visible;
     ul {
-      padding-bottom: 60px;
-      grid-template-rows: repeat(3, 100px);
-      grid-auto-rows: minmax(100px, 100px);
+      overflow-y: visible;
+      grid-template-rows: repeat(3, 200px);
+      grid-auto-rows: 200px;
       gap: 20px;
     }
   }
@@ -32,8 +39,9 @@ $darkMode-bgColor: #151515;
 // 태블릿 세로
 @media (min-width: 768px) and (max-width: 1024px) {
   .main {
+    overflow-y: visible;
     ul {
-      padding-bottom: 70px;
+      overflow-y: visible;
     }
   }
 }
