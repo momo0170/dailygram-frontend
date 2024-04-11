@@ -14,7 +14,7 @@ function App() {
       setIsLogin(true);
       navigate('/diary');
     } else {
-      navigate('/login');
+      navigate('/welcome');
     }
   }, []);
 
