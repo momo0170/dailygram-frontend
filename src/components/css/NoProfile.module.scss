@@ -1,23 +1,17 @@
 $bgColor: #f6f6f6;
-$darkMode-subBgColor: #272727;
+
+$darkMode-sub-bg-color: #272727;
 $darkMode-fontColor: #f6f6f6;
-$darkMode-btnColor: #393939;
+$darkMode-btn-color: #e4e4e4;
 
 .section {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   background-color: $bgColor;
   padding: 15px;
   gap: 10px;
   border-radius: 10px;
-  .text {
-    font-size: 20px;
-    font-weight: 500;
-    &.darkMode {
-      color: $darkMode-fontColor;
-    }
-  }
   .btn {
     display: flex;
     align-items: center;
@@ -38,30 +32,39 @@ $darkMode-btnColor: #393939;
     }
     .btnText {
       &.darkMode {
-        background-color: $darkMode-btnColor;
-        color: $darkMode-fontColor;
+        background-color: $darkMode-btn-color;
+        color: black;
       }
     }
+  }
+  &.darkMode {
+    background-color: $darkMode-sub-bg-color;
   }
 }
 // 모바일 세로
 @media (min-width: 360px) and (max-width: 767px) {
   .section {
     background-color: transparent;
-    .text {
-      font-size: 14px;
-    }
+    border-radius: 0;
+    flex-direction: row;
+    justify-content: flex-end;
     .btn {
+      &.darkMode {
+      }
       .btnIcon {
         display: none;
       }
       .btnText {
         background-color: black;
         color: white;
-        padding: 5px 10px;
+        padding: 7px 10px;
         font-size: 14px;
         font-weight: 600;
-        border-radius: 5px;
+        border-radius: 20px;
+        &.darkMode {
+          background-color: #e4e4e4;
+          color: black;
+        }
       }
     }
   }
@@ -85,6 +88,8 @@ $darkMode-btnColor: #393939;
         font-size: 14px;
         font-weight: 600;
         border-radius: 5px;
+        &.darkMode {
+        }
       }
     }
   }

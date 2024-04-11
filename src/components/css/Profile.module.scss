@@ -1,8 +1,10 @@
 $bgColor: #f6f6f6;
 $bgColorHover: #e4e4e4;
+
 $darkMode-subBgColor: #272727;
 $darkMode-fontColor: #f6f6f6;
 $darkMode-bgColorHover: #4b4b4b;
+$darkMode-btn-color: #e4e4e4;
 
 .main {
   display: flex;
@@ -13,7 +15,7 @@ $darkMode-bgColorHover: #4b4b4b;
   border-radius: 10px;
   padding: 15px;
   box-sizing: border-box;
-  .col:first-child {
+  .col {
     display: flex;
     justify-content: space-between;
     .info {
@@ -80,6 +82,7 @@ $darkMode-bgColorHover: #4b4b4b;
     align-items: center;
     gap: 30px;
     padding: 10px;
+    margin-left: 10px;
     border-radius: 10px;
     cursor: pointer;
     &:hover {
@@ -104,10 +107,20 @@ $darkMode-bgColorHover: #4b4b4b;
 @media (min-width: 360px) and (max-width: 767px) {
   .main {
     background-color: transparent;
+    border-radius: 0;
     .col {
       .btnAndIcon {
         .logoutBtn {
-          color: black;
+          padding: 7px 10px;
+          border-radius: 20px;
+          background-color: black;
+          color: white;
+          font-size: 14px;
+          font-weight: 600;
+          &.darkMode {
+            background-color: $darkMode-btn-color;
+            color: black;
+          }
         }
       }
     }
@@ -129,6 +142,7 @@ $darkMode-bgColorHover: #4b4b4b;
 @media (min-width: 768px) and (max-width: 1024px) {
   .main {
     background-color: transparent;
+    border-radius: 0;
     .col {
       .info {
         .nickname {

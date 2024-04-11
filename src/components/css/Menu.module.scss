@@ -1,5 +1,8 @@
-$lineColor: #e3e5e8;
-$darkMode-lineColor: gray;
+$line-color: #e3e5e8;
+$darkMode-line-color: #3f3f3f;
+
+// 배경
+$bg-color: #f8f9fa;
 
 .aside {
   display: flex;
@@ -14,10 +17,15 @@ $darkMode-lineColor: gray;
   .aside {
     display: block;
     flex-basis: auto;
-    border-bottom: 1px solid $lineColor;
+    border-bottom: 1px solid $line-color;
     padding: 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: $bg-color;
+    z-index: 1;
     &.darkMode {
-      border-bottom: 1px solid $darkMode-lineColor;
+      border-bottom: 1px solid $darkMode-line-color;
     }
   }
 }
@@ -26,11 +34,15 @@ $darkMode-lineColor: gray;
 @media (min-width: 768px) and (max-width: 1024px) {
   .aside {
     display: block;
-    flex-basis: auto;
-    border-bottom: 1px solid $lineColor;
+    border-bottom: 1px solid $line-color;
     padding: 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: $bg-color;
+    z-index: 1;
     &.darkMode {
-      border-bottom: 1px solid $darkMode-lineColor;
+      border-bottom: 1px solid $darkMode-line-color;
     }
   }
 }

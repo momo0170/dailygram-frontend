@@ -1,7 +1,20 @@
-$darkMode-bgColor: #151515;
-$darkMode-fontColor: #f6f6f6;
-$darkMode-btnColor: #393939;
-$darkMode-subFontColor: #818181;
+$darkMode-bg-color: #151515;
+$darkMode-font-color: #f6f6f6;
+$darkMode-btn-color: #393939;
+$darkMode-sub-font-color: #818181;
+$darkMode-btn-hover-color: #464646;
+
+$font-family: 'Noto Sans KR';
+$font-color: black;
+$btn-hover-color: #363636;
+
+$line-height: 1.4;
+
+$mobile-font-size: 16px;
+$mobile-line-height: 1.3;
+
+$tablet-font-size: 16px;
+$tablet-line-height: 1.3;
 
 .background {
   display: none;
@@ -21,42 +34,53 @@ $darkMode-subFontColor: #818181;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    &.darkMode {
+      background-color: black;
+    }
     .header {
       display: flex;
       justify-content: flex-end;
       &.darkMode {
-        background-color: $darkMode-bgColor;
+        background-color: $darkMode-bg-color;
       }
       .closeBtn {
+        padding: 0;
         border: 0;
         background-color: transparent;
         cursor: pointer;
-        .icon.darkMode {
-          color: $darkMode-subFontColor;
+        .icon {
+          color: black;
+          &.darkMode {
+            color: $darkMode-sub-font-color;
+          }
         }
       }
     }
     .section {
       display: flex;
       flex-direction: column;
-      padding: 20px 20px;
+      padding: 0 20px;
       justify-content: center;
       height: 90%;
       &.darkMode {
-        background-color: $darkMode-bgColor;
+        background-color: $darkMode-bg-color;
       }
 
       .content {
+        padding: 0;
         resize: none;
         border: 0;
         flex-grow: 1;
         font-size: 14px;
+        font-family: $font-family;
+        color: $font-color;
+        line-height: $line-height;
         &.darkMode {
-          background-color: $darkMode-bgColor;
-          color: $darkMode-fontColor;
+          background-color: $darkMode-bg-color;
+          color: $darkMode-font-color;
         }
         &.darkMode:disabled {
-          background-color: $darkMode-bgColor;
+          background-color: $darkMode-bg-color;
         }
         &:focus {
           outline: none;
@@ -68,31 +92,38 @@ $darkMode-subFontColor: #818181;
     }
     .footer {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       padding: 10px;
       &.darkMode {
-        background-color: $darkMode-bgColor;
+        background-color: $darkMode-bg-color;
       }
       & button {
         border: 0;
         border-radius: 20px;
-        padding: 7px 15px;
+        padding: 10px 30px;
         font-weight: 700;
+        font-size: 14px;
         cursor: pointer;
       }
       .deleteBtn {
-        margin-right: 10px;
-        background-color: #ff0000;
+        margin-right: 20px;
+        background-color: #db0000;
         color: white;
         &:hover {
-          background-color: #ed0000;
+          background-color: #c80000;
         }
       }
       .updateBtn {
         background-color: black;
         color: white;
+        &:hover {
+          background-color: $btn-hover-color;
+        }
         &.darkMode {
-          background-color: $darkMode-btnColor;
+          background-color: $darkMode-btn-color;
+        }
+        &.darkMode:hover {
+          background-color: $darkMode-btn-hover-color;
         }
       }
     }
@@ -106,18 +137,36 @@ $darkMode-subFontColor: #818181;
 .openBackground {
   display: block;
 }
+
 // 모바일 세로
 @media (min-width: 360px) and (max-width: 767px) {
   .background {
+    &.openBackground {
+      touch-action: none;
+    }
     .main {
       width: 101%;
       height: 100%;
       z-index: 1;
       border-radius: 0%;
+      .section {
+        .content {
+          font-size: $mobile-font-size;
+          line-height: $mobile-line-height;
+          &:disabled {
+            font-color: black;
+          }
+        }
+      }
       .footer {
         justify-content: space-between;
+        padding: 20px;
+        padding-top: 0;
         button {
           width: 100%;
+          padding: 10px;
+          border-radius: 40px;
+          font-size: $mobile-font-size;
         }
       }
     }
@@ -130,11 +179,17 @@ $darkMode-subFontColor: #818181;
     .main {
       width: 80%;
       height: 70%;
+      &.darkMode {
+        background-color: $darkMode-bg-color;
+      }
+      .section {
+        .content {
+          line-height: $tablet-line-height;
+          font-size: $tablet-font-size;
+        }
+      }
       .footer {
         justify-content: space-between;
-        button {
-          width: 100%;
-        }
       }
     }
   }
@@ -145,9 +200,6 @@ $darkMode-subFontColor: #818181;
     .main {
       .footer {
         justify-content: space-between;
-        button {
-          width: 100%;
-        }
       }
     }
   }

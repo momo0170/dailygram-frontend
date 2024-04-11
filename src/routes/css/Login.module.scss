@@ -1,9 +1,9 @@
-$darkMode-bgColor: #151515;
-$darkMode-btnColor: #393939;
-$darkMode-fontColor: #f6f6f6;
-$darkMode-subBgColor: #272727;
-$darkMode-subFontColor: #818181;
-$darkMode-errorColor: #c90000;
+$darkMode-bg-color: #151515;
+$darkMode-btn-color: #393939;
+$darkMode-font-color: #f6f6f6;
+$darkMode-sub-bg-color: #272727;
+$darkMode-sub-font-color: #818181;
+$darkMode-error-color: #c90000;
 
 .main {
   height: 100vh;
@@ -12,7 +12,7 @@ $darkMode-errorColor: #c90000;
   justify-content: center;
   align-items: center;
   &.darkMode {
-    background-color: $darkMode-bgColor;
+    background-color: $darkMode-bg-color;
   }
   .logo {
     position: absolute;
@@ -20,7 +20,7 @@ $darkMode-errorColor: #c90000;
     font-size: 60px;
     font-weight: 600;
     &.darkMode {
-      color: $darkMode-fontColor;
+      color: $darkMode-font-color;
     }
   }
   .form {
@@ -49,17 +49,17 @@ $darkMode-errorColor: #c90000;
       }
       // 다크모드일 때
       &.darkMode {
-        background-color: $darkMode-subBgColor;
-        color: $darkMode-fontColor;
+        background-color: $darkMode-sub-bg-color;
+        color: $darkMode-font-color;
       }
       // 다크모드에서 focus 되었을 때
       &.darkMode:focus {
-        border: 2px solid $darkMode-subFontColor;
+        border: 2px solid $darkMode-sub-font-color;
       }
       // 다크모드에서 메세지가 나타날 때
       &.darkMode.focusId,
       &.darkMode.focusPassword {
-        border: 2px solid $darkMode-errorColor;
+        border: 2px solid $darkMode-error-color;
       }
     }
 
@@ -70,7 +70,7 @@ $darkMode-errorColor: #c90000;
       color: red;
       font-weight: 600;
       &.darkMode {
-        color: $darkMode-errorColor;
+        color: $darkMode-error-color;
       }
     }
     .loginBtn {
@@ -84,8 +84,8 @@ $darkMode-errorColor: #c90000;
       padding: 10px;
       cursor: pointer;
       &.darkMode {
-        background-color: $darkMode-btnColor;
-        color: $darkMode-fontColor;
+        background-color: $darkMode-btn-color;
+        color: $darkMode-font-color;
       }
     }
     .idMessage,
@@ -127,6 +127,9 @@ $darkMode-errorColor: #c90000;
 
 // 태블릿 세로
 @media (min-width: 768px) and (max-width: 1024px) {
+  .signup {
+    font-size: 16px;
+  }
 }
 // 태블릿 가로
 @media (min-width: 1025px) and (max-width: 1279px) {

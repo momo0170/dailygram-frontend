@@ -3,12 +3,11 @@ $darkMode-bgColor: #151515;
 .main {
   display: flex;
   background-color: #f8f9fa;
+  height: 100vh;
   .section {
-    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 66px;
   }
 }
 .main.darkMode {
@@ -19,8 +18,10 @@ $darkMode-bgColor: #151515;
 @media (min-width: 360px) and (max-width: 767px) {
   .main {
     flex-direction: column;
+    height: 100%;
     .section {
       height: 100%;
+      padding-top: 66px;
       margin-bottom: 52px;
     }
   }
@@ -30,8 +31,10 @@ $darkMode-bgColor: #151515;
 @media (min-width: 768px) and (max-width: 1024px) {
   .main {
     flex-direction: column;
+    height: 100%;
     .section {
       height: 100%;
+      padding-top: 66px;
       margin-bottom: 52px;
     }
   }

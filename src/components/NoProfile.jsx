@@ -12,9 +12,6 @@ export default function NoProfile() {
   };
   return (
     <section className={`${styles.section} ${darkMode ? styles.darkMode : ''}`}>
-      <span className={`${styles.text} ${darkMode ? styles.darkMode : ''}`}>
-        로그인이 필요합니다
-      </span>
       <div
         onClick={moveToLogin}
         className={`${styles.btn} ${darkMode ? styles.darkMode : ''}`}
@@ -25,7 +22,7 @@ export default function NoProfile() {
         <span
           className={`${styles.btnText} ${darkMode ? styles.darkMode : ''}`}
         >
-          로그인 하러 가기
+          로그인
         </span>
       </div>
     </section>

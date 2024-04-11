@@ -1,30 +1,33 @@
-$darkMode-btnColor: #393939;
-$darkMode-btnfontColor: #f6f6f6;
+$font-color: #f6f6f6;
+$bg-color: black;
+
+$darkMode-font-color: #f6f6f6;
+$darkMode-btn-color: #393939;
 
 .btn {
   right: 30px;
   bottom: 30px;
   border: 0;
   border-radius: 20px;
-  background-color: black;
-  color: white;
+  color: $font-color;
+  background-color: $bg-color;
   padding: 10px;
   cursor: pointer;
   font-weight: 700;
   font-size: 16px;
-}
-.btn.darkMode {
-  background-color: $darkMode-btnColor;
-  color: $darkMode-btnfontColor;
+  &.darkMode {
+    color: $darkMode-font-color;
+    background-color: $darkMode-btn-color;
+  }
 }
 // 모바일 세로
 @media (min-width: 360px) and (max-width: 767px) {
   .btn {
-    position: fixed;
     width: 100%;
     z-index: 1;
-    bottom: 0;
+    position: fixed;
     right: 0;
+    bottom: 0;
     border-radius: 0;
     padding: 15px 10px;
     font-size: 18px;

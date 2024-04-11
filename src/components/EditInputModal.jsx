@@ -99,7 +99,7 @@ export default function EditInputModal({
           {nickname === user.nickname ? (
             <>
               <button onClick={handleDelete} className={styles.deleteBtn}>
-                삭제
+                삭제하기
               </button>
               <button
                 onClick={handleUpdate}
@@ -107,7 +107,7 @@ export default function EditInputModal({
                   darkMode ? styles.darkMode : ''
                 }`}
               >
-                수정
+                수정하기
               </button>
             </>
           ) : null}

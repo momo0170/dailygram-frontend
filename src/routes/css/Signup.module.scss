@@ -1,8 +1,7 @@
-$fontSize: 16px;
-$borderRadius: 5px;
+$font-size: 16px;
+$border-radius: 5px;
 
 .main {
-  height: 100vh;
   padding: 200px 0;
   box-sizing: border-box;
   .inputs {
@@ -14,12 +13,13 @@ $borderRadius: 5px;
       gap: 20px;
       & > input {
         border: 1px solid black;
-        border-radius: $borderRadius;
+        border-radius: $border-radius;
         padding: 10px;
-        font-size: $fontSize;
+        font-size: $font-size;
         width: 300px;
       }
       & > input:focus {
+        border: 2px solid black;
         outline: none;
       }
     }
@@ -31,15 +31,19 @@ $borderRadius: 5px;
     margin-top: 40px;
     & > button {
       border: none;
-      border-radius: $borderRadius;
+      border-radius: $border-radius;
       background-color: transparent;
       padding: 10px 60px;
       cursor: pointer;
-      font-size: $fontSize;
+      font-size: $font-size;
       font-weight: 600;
+      color: black;
     }
     .cancelBtn {
-      border: 1px solid black;
+      background-color: #f6f6f6;
+      &:hover {
+        background-color: #e4e4e4;
+      }
     }
     .signUpBtn {
       background-color: black;
@@ -47,20 +51,23 @@ $borderRadius: 5px;
     }
   }
 }
-$mobile-fontSize: 14px;
+$mobile-font-size: 16px;
 // 모바일 세로
 @media (min-width: 360px) and (max-width: 767px) {
   .main {
     .inputs div input {
-      width: 80vw;
-      font-size: $mobile-fontSize;
+      width: 70vw;
+      font-size: $mobile-font-size;
+      padding-left: 15px;
+      padding-right: 15px;
+      // padding: 15px;
     }
     .inputs div input::placeholder {
-      font-size: $mobile-fontSize;
+      font-size: $mobile-font-size;
     }
     .btns {
       button {
-        font-size: $mobile-fontSize;
+        font-size: $mobile-font-size;
         font-weight: 700;
       }
     }

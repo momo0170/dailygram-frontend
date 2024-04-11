@@ -1,7 +1,11 @@
-$darMode-bgColor: #151515;
-$darkMode-fontColor: #f6f6f6;
-$darkMode-btnColor: #393939;
+$darMode-bg-color: #151515;
+$darkMode-font-color: #f6f6f6;
+$darkMode-btn-color: #393939;
+
 $font-family: 'Noto Sans KR';
+$btn-hover-color: #363636;
+
+$mobile-font-size: 16px;
 
 .background {
   display: none;
@@ -28,21 +32,20 @@ $font-family: 'Noto Sans KR';
       justify-content: center;
       height: 90%;
       &.darkMode {
-        background-color: $darMode-bgColor;
+        background-color: $darMode-bg-color;
       }
-
       .content {
         resize: none;
         border: 0;
         flex-grow: 1;
         font-size: 14px;
-        font-family: var(--font-family);
+        font-family: $font-family;
         &:focus {
           outline: none;
         }
         &.darkMode {
-          background-color: $darMode-bgColor;
-          color: $darkMode-fontColor;
+          background-color: $darMode-bg-color;
+          color: $darkMode-font-color;
         }
       }
     }
@@ -51,13 +54,14 @@ $font-family: 'Noto Sans KR';
       justify-content: flex-end;
       padding: 10px;
       &.darkMode {
-        background-color: $darMode-bgColor;
+        background-color: $darMode-bg-color;
       }
       & button {
         border: 0;
         border-radius: 20px;
-        padding: 7px 15px;
+        padding: 10px 30px;
         font-weight: 700;
+        font-size: 14px;
         cursor: pointer;
       }
       .closeBtn {
@@ -71,8 +75,11 @@ $font-family: 'Noto Sans KR';
       .createBtn {
         background-color: black;
         color: white;
+        &:hover {
+          background-color: $btn-hover-color;
+        }
         &.darkMode {
-          background-color: $darkMode-btnColor;
+          background-color: $darkMode-btn-color;
         }
       }
     }
@@ -95,10 +102,20 @@ $font-family: 'Noto Sans KR';
       height: 100%;
       border-radius: 0%;
       z-index: 1;
+      .section {
+        .content {
+          font-size: $mobile-font-size;
+        }
+      }
       .footer {
         justify-content: center;
+        padding: 20px;
+        padding-top: 0;
         button {
           width: 100%;
+          padding: 10px;
+          border-radius: 40px;
+          font-size: $mobile-font-size;
         }
       }
     }
@@ -111,11 +128,11 @@ $font-family: 'Noto Sans KR';
     .main {
       width: 80%;
       height: 70%;
+      &.darkMode {
+        background-color: $darMode-bg-color;
+      }
       .footer {
         justify-content: space-between;
-        button {
-          width: 100%;
-        }
       }
     }
   }

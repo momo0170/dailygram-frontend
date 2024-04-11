@@ -27,6 +27,7 @@
     .loginText {
       background-color: white;
       border: 1px solid black;
+      color: black;
     }
     .signupText {
       background-color: black;
@@ -38,9 +39,7 @@
 @media (min-width: 360px) and (max-width: 767px) {
   .main {
     .text {
-      height: 50%;
       font-size: 40px;
-      align-items: center;
     }
     .btns {
       .loginText {
@@ -59,6 +58,13 @@
 
 // 태블릿 세로
 @media (min-width: 768px) and (max-width: 1024px) {
+  .main {
+    .text {
+      font-size: 60px;
+    }
+    .btns {
+    }
+  }
 }
 // 태블릿 가로
 @media (min-width: 1025px) and (max-width: 1279px) {

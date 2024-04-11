@@ -1,12 +1,19 @@
+// 폰트
 $font-family: 'Noto Sans KR';
 $font-nickname: 14px;
 $font-date: 12px;
 $font-text: 13px;
-$font-text-color: #485057;
-$darkMode-bgColor: #272727;
+$font-text-color: #242424;
+
+// 라인
+$line-color: #f0f0f0;
+$line-height: 1.5;
+
+// 다크모드
+$darkMode-bg-color: #272727;
 $darkMode-fontColor: #f6f6f6;
-$darkMode-footerBgColor: #1e1e1e;
-$darkMode-fontColorDarker: #818181;
+$darkMode-fontColorDarker: #bdbdbd;
+$darkMode-line-color: #3f3f3f;
 
 %card-hover {
   transition: transform 200ms ease-in-out;
@@ -18,12 +25,12 @@ li {
   flex-direction: column;
   height: 200px;
   background-color: white;
+  border: 1px solid $line-color;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 1px 1px 5px gray;
   cursor: pointer;
   &.darkMode {
-    box-shadow: 1px 1px 5px #606060;
+    border: 1px solid $darkMode-line-color;
   }
   &:hover {
     transform: translateY(-5px);
@@ -39,8 +46,9 @@ li {
     font-size: $font-text;
     font-family: $font-family;
     color: $font-text-color;
+    line-height: $line-height;
     &.darkMode {
-      background-color: $darkMode-bgColor;
+      background-color: $darkMode-bg-color;
       color: $darkMode-fontColor;
     }
   }
@@ -49,8 +57,11 @@ li {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    box-sizing: border-box;
-    background-color: #f0f0f0;
+    border-top: 1px solid $line-color;
+    &.darkMode {
+      background-color: $darkMode-bg-color;
+      border-top: 1px solid $darkMode-line-color;
+    }
     .user {
       display: flex;
       align-items: center;
@@ -75,15 +86,24 @@ li {
         color: $darkMode-fontColorDarker;
       }
     }
-    &.darkMode {
-      background-color: $darkMode-footerBgColor;
-    }
   }
 }
 // 모바일 세로
 @media (min-width: 360px) and (max-width: 767px) {
   li {
+    &.darkMode {
+      border: 1px solid $darkMode-line-color;
+    }
     height: 100%;
+    .text {
+      line-height: 1.5;
+    }
+    .info {
+      border-top: 1px solid $line-color;
+      &.darkMode {
+        border-top: 1px solid $darkMode-line-color;
+      }
+    }
   }
 }
 

@@ -69,13 +69,13 @@ export default function InputModal({
           className={`${styles.footer} ${darkMode ? styles.darkMode : ''}`}
         >
           <button onClick={handleClose} className={styles.closeBtn}>
-            취소
+            취소하기
           </button>
           <button
             onClick={handleCreate}
             className={`${styles.createBtn} ${darkMode ? styles.darkMode : ''}`}
           >
-            생성
+            생성하기
           </button>
         </footer>
       </div>
