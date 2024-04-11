@@ -1,9 +1,11 @@
-$bgColor: #f6f6f6;
-$bgColorHover: #e4e4e4;
+$font-family: 'Noto Sans KR', 'Noto Sans';
 
-$darkMode-subBgColor: #272727;
-$darkMode-fontColor: #f6f6f6;
-$darkMode-bgColorHover: #4b4b4b;
+$bg-color: #f6f6f6;
+$bg-color-hover: #e4e4e4;
+
+$darkMode-sub-bg-color: #272727;
+$darkMode-font-color: #f6f6f6;
+$darkMode-bg-color-hover: #4b4b4b;
 $darkMode-btn-color: #e4e4e4;
 
 .main {
@@ -11,7 +13,7 @@ $darkMode-btn-color: #e4e4e4;
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
-  background-color: $bgColor;
+  background-color: $bg-color;
   border-radius: 10px;
   padding: 15px;
   box-sizing: border-box;
@@ -30,8 +32,9 @@ $darkMode-btn-color: #e4e4e4;
       .nickname {
         font-weight: 600;
         font-size: 18px;
+        font-family: $font-family;
         &.darkMode {
-          color: $darkMode-fontColor;
+          color: $darkMode-font-color;
         }
       }
     }
@@ -50,22 +53,22 @@ $darkMode-btn-color: #e4e4e4;
           text-decoration: underline;
         }
         &.darkMode {
-          color: $darkMode-fontColor;
+          color: $darkMode-font-color;
         }
       }
       .arrow {
         cursor: pointer;
         &:hover {
-          background-color: $bgColorHover;
+          background-color: $bg-color-hover;
           border-radius: 50%;
           box-sizing: border-box;
           padding: 1px;
         }
         &.darkMode {
-          color: $darkMode-fontColor;
+          color: $darkMode-font-color;
         }
         &.darkMode:hover {
-          background-color: $darkMode-bgColorHover;
+          background-color: $darkMode-bg-color-hover;
         }
         &.clicked {
           transform: rotate(180deg);
@@ -74,7 +77,7 @@ $darkMode-btn-color: #e4e4e4;
     }
   }
   &.darkMode {
-    background-color: $darkMode-subBgColor;
+    background-color: $darkMode-sub-bg-color;
   }
 
   .darkModeBtn {
@@ -86,19 +89,19 @@ $darkMode-btn-color: #e4e4e4;
     border-radius: 10px;
     cursor: pointer;
     &:hover {
-      background-color: $bgColorHover;
+      background-color: $bg-color-hover;
     }
     &.darkMode:hover {
-      background-color: $darkMode-bgColorHover;
+      background-color: $darkMode-bg-color-hover;
     }
     &.clicked {
       display: flex;
     }
     .icon.darkMode {
-      color: $darkMode-fontColor;
+      color: $darkMode-font-color;
     }
     .text.darkMode {
-      color: $darkMode-fontColor;
+      color: $darkMode-font-color;
     }
   }
 }

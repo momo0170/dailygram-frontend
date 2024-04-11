@@ -1,7 +1,7 @@
 $bgColor: #f6f6f6;
 
 $darkMode-sub-bg-color: #272727;
-$darkMode-fontColor: #f6f6f6;
+$darkMode-font-color: #f6f6f6;
 $darkMode-btn-color: #e4e4e4;
 
 .section {
@@ -22,12 +22,12 @@ $darkMode-btn-color: #e4e4e4;
     }
 
     &.darkMode:hover {
-      text-decoration-color: $darkMode-fontColor;
+      text-decoration-color: $darkMode-font-color;
     }
 
     .btnIcon {
       &.darkMode {
-        color: $darkMode-fontColor;
+        color: $darkMode-font-color;
       }
     }
     .btnText {

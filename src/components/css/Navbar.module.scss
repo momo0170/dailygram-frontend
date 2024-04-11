@@ -12,6 +12,7 @@ $mobile-font-size: 14px;
     background-color: transparent;
     font-size: $font-size;
     padding: 0;
+    color: black;
     &.darkMode {
       color: $darkMode-font-color;
     }

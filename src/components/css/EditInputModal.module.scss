@@ -4,7 +4,7 @@ $darkMode-btn-color: #393939;
 $darkMode-sub-font-color: #818181;
 $darkMode-btn-hover-color: #464646;
 
-$font-family: 'Noto Sans KR';
+$font-family: 'Noto Sans KR', 'Noto Sans';
 $font-color: black;
 $btn-hover-color: #363636;
 
@@ -81,12 +81,14 @@ $tablet-line-height: 1.3;
         }
         &.darkMode:disabled {
           background-color: $darkMode-bg-color;
+          color: $darkMode-font-color;
         }
         &:focus {
           outline: none;
         }
         &:disabled {
           background-color: white;
+          color: $font-color;
         }
       }
     }
@@ -153,9 +155,6 @@ $tablet-line-height: 1.3;
         .content {
           font-size: $mobile-font-size;
           line-height: $mobile-line-height;
-          &:disabled {
-            font-color: black;
-          }
         }
       }
       .footer {

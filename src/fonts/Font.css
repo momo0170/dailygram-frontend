@@ -2,3 +2,8 @@
   font-family: 'Noto Sans KR';
   src: url('./NotoSansKR-Regular.otf') format('otf');
 }
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('./NotoSans_Condensed-Regular.otf') format('otf');
+}

@@ -1,9 +1,12 @@
 // 폰트
-$font-family: 'Noto Sans KR';
+$font-family: 'Noto Sans KR', 'Noto Sans';
 $font-nickname: 14px;
 $font-date: 12px;
-$font-text: 13px;
+$font-text: 14px;
 $font-text-color: #242424;
+
+// 모바일
+$mobile-font-text: 14px;
 
 // 라인
 $line-color: #f0f0f0;
@@ -11,8 +14,8 @@ $line-height: 1.5;
 
 // 다크모드
 $darkMode-bg-color: #272727;
-$darkMode-fontColor: #f6f6f6;
-$darkMode-fontColorDarker: #bdbdbd;
+$darkMode-font-color: #f6f6f6;
+$darkMode-font-color-darker: #bdbdbd;
 $darkMode-line-color: #3f3f3f;
 
 %card-hover {
@@ -49,7 +52,7 @@ li {
     line-height: $line-height;
     &.darkMode {
       background-color: $darkMode-bg-color;
-      color: $darkMode-fontColor;
+      color: $darkMode-font-color;
     }
   }
   .info {
@@ -74,8 +77,9 @@ li {
       .nickname {
         font-size: $font-nickname;
         font-weight: 500;
+        font-family: $font-family;
         &.darkMode {
-          color: $darkMode-fontColor;
+          color: $darkMode-font-color;
         }
       }
     }
@@ -83,7 +87,7 @@ li {
       font-size: $font-date;
       color: $font-text-color;
       &.darkMode {
-        color: $darkMode-fontColorDarker;
+        color: $darkMode-font-color-darker;
       }
     }
   }
@@ -97,6 +101,7 @@ li {
     height: 100%;
     .text {
       line-height: 1.5;
+      font-size: $mobile-font-text;
     }
     .info {
       border-top: 1px solid $line-color;
