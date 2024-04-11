@@ -22,6 +22,7 @@
 @media (min-width: 360px) and (max-width: 767px) {
   .main {
     overflow-y: visible;
+    margin-bottom: 10px;
     ul {
       overflow-y: visible;
       grid-template-rows: repeat(3, 200px);

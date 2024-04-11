@@ -38,6 +38,7 @@
 // 모바일 세로
 @media (min-width: 360px) and (max-width: 767px) {
   .main {
+    height: 100dvh;
     .text {
       font-size: 40px;
     }
@@ -59,6 +60,7 @@
 // 태블릿 세로
 @media (min-width: 768px) and (max-width: 1024px) {
   .main {
+    height: 100dvh;
     .text {
       font-size: 60px;
     }
