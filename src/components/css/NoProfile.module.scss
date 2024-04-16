@@ -1,4 +1,4 @@
-$bgColor: #f6f6f6;
+$bg-color: #f8f9fa;
 
 $darkMode-sub-bg-color: #272727;
 $darkMode-font-color: #f6f6f6;
@@ -7,32 +7,28 @@ $darkMode-btn-color: #e4e4e4;
 .section {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  background-color: $bgColor;
-  padding: 15px;
+  background-color: $bg-color;
   gap: 10px;
   border-radius: 10px;
   .btn {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 5px;
     cursor: pointer;
-    &:hover {
-      text-decoration: underline;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+    border-radius: 7px;
+    &.darkMode {
+      background-color: #e4e4e4;
     }
-
     &.darkMode:hover {
       text-decoration-color: $darkMode-font-color;
     }
-
-    .btnIcon {
-      &.darkMode {
-        color: $darkMode-font-color;
-      }
-    }
     .btnText {
       &.darkMode {
-        background-color: $darkMode-btn-color;
         color: black;
       }
     }
@@ -44,20 +40,19 @@ $darkMode-btn-color: #e4e4e4;
 // 모바일 세로
 @media (min-width: 360px) and (max-width: 767px) {
   .section {
+    padding: 15px;
     background-color: transparent;
     border-radius: 0;
     flex-direction: row;
     justify-content: flex-end;
     .btn {
+      padding: 7px 10px;
+      border-radius: 20px;
       &.darkMode {
-      }
-      .btnIcon {
-        display: none;
       }
       .btnText {
         background-color: black;
         color: white;
-        padding: 7px 10px;
         font-size: 14px;
         font-weight: 600;
         border-radius: 20px;
@@ -73,21 +68,20 @@ $darkMode-btn-color: #e4e4e4;
 // 태블릿 세로
 @media (min-width: 768px) and (max-width: 1024px) {
   .section {
+    flex-direction: row;
+    justify-content: flex-end;
     background-color: transparent;
+    border-radius: 0;
+    padding: 15px;
     .text {
       font-size: 14px;
     }
     .btn {
-      .btnIcon {
-        display: none;
-      }
+      border-radius: 20px;
+      padding: 7px 10px;
       .btnText {
-        background-color: black;
-        color: white;
-        padding: 5px 10px;
         font-size: 14px;
         font-weight: 600;
-        border-radius: 5px;
         &.darkMode {
         }
       }

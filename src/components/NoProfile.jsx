@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import styles from './css/NoProfile.module.scss';
 import { useNavigate } from 'react-router-dom';
-import { RiArrowGoBackLine } from 'react-icons/ri';
 import { DarkModeContext } from '../context/DarkModeContext.jsx';
 
 export default function NoProfile() {
@@ -16,9 +15,6 @@ export default function NoProfile() {
         onClick={moveToLogin}
         className={`${styles.btn} ${darkMode ? styles.darkMode : ''}`}
       >
-        <RiArrowGoBackLine
-          className={`${styles.btnIcon} ${darkMode ? styles.darkMode : ''}`}
-        />
         <span
           className={`${styles.btnText} ${darkMode ? styles.darkMode : ''}`}
         >
